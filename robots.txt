@@ -4,5 +4,5 @@ Allow: /
 Disallow: /admin
 
 # Host and Sitemap
-Host: https://callmerose.io.vn
-Sitemap: https://callmerose.io.vn/sitemap.xml
+Host: https://www.callmerose.io.vn
+Sitemap: https://www.callmerose.io.vn/sitemap.xml
