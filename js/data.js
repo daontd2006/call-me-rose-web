@@ -11,7 +11,7 @@ const DEFAULT_SHOP_DATA = {
     zalo: "0987 654 321",
     tiktok: "https://www.tiktok.com/@callmerose.florals",
     facebook: "https://www.facebook.com/callmerose.wedding",
-    address: "28 Ngõ Tràng Tiền, Quận Hoàn Kiếm, Hà Nội",
+    address: "Ngõ 57 Mễ Trì, Hà Nội",
     bank: {
       bankName: "MBBank (Ngoại Thương / Quân Đội)",
       accountNumber: "8888 6666 9999",
