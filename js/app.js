@@ -636,26 +636,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // --- MOBILE MENU DRAWER CONTROLLER ---
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
+  const closeMobileMenuBackdrop = document.getElementById('close-mobile-menu-backdrop');
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.onclick = () => mobileMenu && mobileMenu.classList.remove('hidden');
+  }
+  if (closeMobileMenuBtn) {
+    closeMobileMenuBtn.onclick = () => mobileMenu && mobileMenu.classList.add('hidden');
+  }
+  if (closeMobileMenuBackdrop) {
+    closeMobileMenuBackdrop.onclick = () => mobileMenu && mobileMenu.classList.add('hidden');
+  }
+
   // --- TAB NAVIGATION SWITCHER ---
   function switchTab(tabName) {
     if (!tabName) tabName = 'home';
-    tabName = tabName.replace('#', '');
-    
+    tabName = tabName.replace('#', '').trim().toLowerCase();
+
+    // Map synonyms
+    if (tabName === 'about') tabName = 'philosophy';
+
     const validTabs = ['home', 'shop', 'philosophy', 'workshop', 'preservation', 'blog', 'contact'];
     if (!validTabs.includes(tabName)) tabName = 'home';
 
-    // Hide all tabs
+    // Hide all tab content containers
     document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
 
-    // Show target tab
+    // Show target tab container
     const targetTab = document.getElementById(`tab-${tabName}`);
     if (targetTab) {
       targetTab.classList.remove('hidden');
     }
 
-    // Update nav link active state
+    // Update active highlight on nav links
     document.querySelectorAll('.nav-tab-link').forEach(link => {
-      const linkTab = link.getAttribute('data-tab');
+      let linkTab = link.getAttribute('data-tab');
+      if (!linkTab) {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) linkTab = href.substring(1);
+      }
+      if (linkTab === 'about') linkTab = 'philosophy';
+
       if (linkTab === tabName) {
         link.classList.add('nav-tab-active');
       } else {
@@ -663,33 +688,54 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Scroll to top smoothly
+    // Close mobile menu if open
+    if (mobileMenu) mobileMenu.classList.add('hidden');
+
+    // Trigger dynamic renders if switching to populated tabs
+    if (tabName === 'shop') renderProducts();
+    if (tabName === 'workshop') renderWorkshops();
+    if (tabName === 'blog') renderBlogs();
+
+    // Refresh Lucide Icons inside visible DOM
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+
+    // Scroll smoothly to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Attach click events to nav tab links
+  // Attach click listeners to all tab links
   document.querySelectorAll('.nav-tab-link').forEach(link => {
     link.addEventListener('click', (e) => {
-      const tab = link.getAttribute('data-tab');
+      e.preventDefault();
+      let tab = link.getAttribute('data-tab');
+      if (!tab) {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) tab = href.substring(1);
+      }
       if (tab) {
         switchTab(tab);
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, null, `#${tab}`);
+        }
       }
     });
   });
 
-  // Handle URL hash change (e.g., #shop or #workshop)
+  // Handle URL hash change (e.g., direct link to #shop or #workshop)
   window.addEventListener('hashchange', () => {
     const hash = window.location.hash.substring(1);
     if (hash) switchTab(hash);
   });
 
-  // --- INITIALIZE ---
+  // --- INITIALIZE ALL DATA & TAB ---
   updateShopInfoUI();
   renderProducts();
   renderWorkshops();
   renderBlogs();
 
-  // Initialize Tab on Load
+  // Read initial hash or default to 'home'
   const initialHash = window.location.hash.substring(1);
   switchTab(initialHash || 'home');
 });

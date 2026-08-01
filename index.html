@@ -535,6 +535,30 @@
     </div>
   </div>
 
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden">
+    <div class="modal-backdrop absolute inset-0" id="close-mobile-menu-backdrop"></div>
+    <div class="relative bg-white w-64 h-full p-6 shadow-2xl z-10 flex flex-col justify-between animate-slide-left">
+      <div class="space-y-6">
+        <div class="flex items-center justify-between border-b border-olive-100 pb-4">
+          <span class="font-bold text-olive-900 text-sm">Call Me Rose</span>
+          <button id="close-mobile-menu-btn" class="text-olive-500" aria-label="Đóng menu">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col space-y-4 text-xs font-semibold uppercase tracking-wider text-olive-800">
+          <a href="#home" data-tab="home" class="nav-tab-link py-2 border-b border-olive-50">Home</a>
+          <a href="#shop" data-tab="shop" class="nav-tab-link py-2 border-b border-olive-50">Shop</a>
+          <a href="#philosophy" data-tab="philosophy" class="nav-tab-link py-2 border-b border-olive-50">About</a>
+          <a href="#workshop" data-tab="workshop" class="nav-tab-link py-2 border-b border-olive-50">Workshop</a>
+          <a href="#preservation" data-tab="preservation" class="nav-tab-link py-2 border-b border-olive-50">Preservation</a>
+          <a href="#blog" data-tab="blog" class="nav-tab-link py-2 border-b border-olive-50">Blog</a>
+          <a href="#contact" data-tab="contact" class="nav-tab-link py-2 border-b border-olive-50">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
   <!-- FLOATING CONTACT ZALO BUTTON -->
   <div class="fixed bottom-6 right-6 z-30">
     <button id="floating-zalo-btn" class="w-12 h-12 rounded-full bg-olive-600 hover:bg-olive-700 text-white shadow-xl flex items-center justify-center transition-transform hover:scale-105" title="Nhắn Zalo Tư Vấn" aria-label="Nhắn Zalo tư vấn hoa cưới">
