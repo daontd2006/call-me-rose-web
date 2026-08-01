@@ -6,12 +6,12 @@
 const DEFAULT_SHOP_DATA = {
   settings: {
     shopName: "Call Me Rose",
-    slogan: "Handcrafted Florals & Resin Keepsakes for Weddings",
+    slogan: "Handcrafted Clay Lily Bouquets & Fine Bridal Headpieces",
     phone: "0987 654 321",
     zalo: "0987 654 321",
     tiktok: "https://www.tiktok.com/@callmerose.florals",
     facebook: "https://www.facebook.com/callmerose.wedding",
-    address: "28 Ngõ Tràng Tien, Quận Hoàn Kiếm, Hà Nội",
+    address: "28 Ngõ Tràng Tiền, Quận Hoàn Kiếm, Hà Nội",
     bank: {
       bankName: "MBBank (Ngoại Thương / Quân Đội)",
       accountNumber: "8888 6666 9999",
@@ -22,75 +22,75 @@ const DEFAULT_SHOP_DATA = {
   products: [
     {
       id: "prod-1",
-      name: "Đèn Resin Hoa Cưới Bảo Tồn - Mẫu Rose White Gold",
-      category: "resin-light",
-      price: 1250000,
-      originalPrice: 1500000,
-      image: "assets/resin_floral_light.png",
+      name: "Bó Hoa Cưới Linh Lan Đất Sét Nhật Bản (Clay Lily Bouquet)",
+      category: "clay-lily",
+      price: 1850000,
+      originalPrice: 2200000,
+      image: "assets/clay_lily_bouquet.png",
       rating: 5.0,
-      reviewsCount: 28,
+      reviewsCount: 36,
       isBestSeller: true,
-      description: "Đèn ngủ khối resin cao cấp đúc hoa hồng trắng tươi bảo tồn kết hợp lá khuynh diệp và vảy vàng 24k. Đế gỗ sồi tự nhiên có công tắc cảm ứng dịu nhẹ cho phòng ngủ tiệc cưới.",
+      description: "Bó hoa cưới thủ công tỉ mỉ từng chuông hoa linh lan bằng đất sét Nhật Bản cao cấp. Giữ nguyên vẻ tinh khôi mềm mại, bảo tồn trọn đời làm kỷ vật ngày chung đôi.",
       specs: [
-        "Kích thước: 15cm x 15cm x 5cm",
-        "Chất liệu: Resin đúc nguyên khối chống ố vàng 10 năm",
-        "Đế gỗ: Gỗ sồi nhập khẩu tích hợp đèn LED vàng ấm",
-        "Đi kèm: Hộp quà cao cấp + Thiệp cưới thiết kế riêng"
+        "Chất liệu: Đất sét Nhật Bản cao cấp siêu nhẹ & dẻo dai",
+        "Kích thước: Chiều dài bó 32cm, 100+ chuông hoa nắn tay tỉ mỉ",
+        "Độ bền: Lưu giữ vĩnh cửu không phai màu, không hỏng",
+        "Đi kèm: Dải lụa tơ tằm mềm mại + Hộp đựng bảo quản cao cấp"
       ],
-      customOptions: ["Khắc tên chú rể & cô dâu lên đế gỗ", "Gửi hoa cưới thật của bạn để đúc"]
+      customOptions: ["Tùy chỉnh số lượng chuông hoa", "Kết hợp thêm lá & hoa hồng đất sét pastel"]
     },
     {
       id: "prod-2",
-      name: "Bộ Cài Tóc Hoa Tươi Phủ Resin Cô Dâu - Olive Grace",
-      category: "bridal-accessories",
-      price: 680000,
-      originalPrice: 850000,
-      image: "assets/bridal_hair_accessory.png",
-      rating: 4.9,
-      reviewsCount: 19,
+      name: "Bộ Phụ Kiện Cài Tóc Cô Dâu Hoa Linh Lan (Clay Lily Headpiece Set)",
+      category: "bridal-headpieces",
+      price: 950000,
+      originalPrice: 1200000,
+      image: "assets/clay_bridal_headpiece.png",
+      rating: 5.0,
+      reviewsCount: 29,
       isBestSeller: true,
-      description: "Trâm cài tóc thủ công kết hợp hoa baby khô, hoa bơ thủy tiên phủ lớp resin trong suốt siêu nhẹ. Giúp cô dâu rạng rỡ thanh lịch trong lễ gia tiên và tiệc tối.",
+      description: "Bộ trâm cài tóc & dây hoa cưới nhành linh lan đất sét tinh xảo kết hợp ngọc trai nước ngọt và kim loại mạ vàng 18k mang phong cách Vivi Embellish kiều diễm.",
       specs: [
-        "Bộ gồm: 5 trâm cài tóc thủ công",
-        "Chất liệu: Khung kim loại mạ vàng 18k + Resin hoa thật",
-        "Trọng lượng: Siêu nhẹ, không lo nặng tóc khi đội lụa/vương miện"
+        "Bộ sản phẩm: 1 Dây hoa đội đầu/cài tóc + 2 Trâm cài tóc phối hợp",
+        "Chất liệu: Hoa đất sét làm tay + Ngọc trai nước ngọt + Dây uốn mạ vàng 18k",
+        "Trọng lượng: Siêu nhẹ, dễ tạo kiểu búi tóc/tóc xõa cô dâu"
       ],
-      customOptions: ["Phối màu hoa theo màu váy cưới", "Thiết kế thêm hoa cài áo chú rể đồng bộ"]
+      customOptions: ["Phối màu lá mạ vàng hoặc mạ bạc", "Làm thêm hoa cài áo chú rể (Boutonniere) đồng bộ"]
     },
     {
       id: "prod-3",
-      name: "Khối Kỷ Vật Bảo Tồn Bó Hoa Cưới Cô Dâu (Custom Bouquet Resin)",
-      category: "keepsakes",
+      name: "Hoa Tai Cô Dâu Dáng Nhành Linh Lan Đất Sét (Clay Lily Earrings)",
+      category: "bridal-jewelry",
+      price: 480000,
+      originalPrice: 580000,
+      image: "assets/bridal_hair_accessory.png",
+      rating: 4.9,
+      reviewsCount: 18,
+      isBestSeller: false,
+      description: "Đôi hoa tai dáng thả chuông hoa linh lan bằng đất sét Nhật trắng muốt nhẹ nhàng, tôn vinh vẻ đẹp thanh lịch quý phái cho cô dâu trong ngày cưới.",
+      specs: [
+        "Chất liệu: Đất sét Nhật + Chuôi hoa tai bạc 925 chống dị ứng",
+        "Dáng hoa tai: Thả dài 5cm thanh thoát"
+      ],
+      customOptions: ["Đính thêm hạt pha chế Thụy Sĩ", "Chuyển sang dạng kẹp cho cô dâu không bấm lỗ tai"]
+    },
+    {
+      id: "prod-4",
+      name: "Khối Kỷ Vật Resin Bảo Tồn Bó Hoa Cưới (Custom Resin & Clay Keepsake)",
+      category: "preservation",
       price: 2450000,
       originalPrice: 2800000,
       image: "assets/resin_floral_light.png",
       rating: 5.0,
       reviewsCount: 42,
       isBestSeller: true,
-      description: "Dịch vụ giữ trọn khoảnh khắc ngày chung đôi. Bạn gửi bó hoa cưới ngay sau lễ cưới, Call Me Rose sẽ xử lý sấy thăng hoa giữ nguyên màu và đúc thành khối resin nghệ thuật.",
+      description: "Dịch vụ đúc khối resin trong suốt bảo tồn bó hoa cưới thật hoặc bó hoa đất sét kỷ niệm. Kết hợp khắc tên cô dâu chú rể & ngày cưới trường tồn.",
       specs: [
-        "Kích thước khối: 20cm x 20cm x 8cm",
-        "Quy trình xử lý: 14 - 21 ngày tỉ mỉ thủ công",
-        "Độ bền: Lưu giữ kỷ niệm trăm năm không phai sắc"
+        "Kích thước khối: 20cm x 20cm x 8cm nguyên khối",
+        "Quy trình xử lý: 14 - 21 ngày thủ công tỉ mỉ",
+        "Đèn LED: Đế gỗ sồi tự nhiên phát sáng dịu nhẹ"
       ],
-      customOptions: ["In ngày cưới & câu vow lồng trong resin", "Tặng kèm 2 móc khóa hoa cưới nhỏ"]
-    },
-    {
-      id: "prod-4",
-      name: "Bộ Kit DIY Tự Đúc Đèn Resin Hoa Khô Tại Nhà",
-      category: "diy-kit",
-      price: 490000,
-      originalPrice: 590000,
-      image: "assets/workshop_banner.png",
-      rating: 4.8,
-      reviewsCount: 15,
-      isBestSeller: false,
-      description: "Bộ dụng cụ đầy đủ gồm Resin AB không độc hại, khuôn silicone, các loại hoa sấy khô pastel, đế đèn gỗ sồi và video hướng dẫn từng bước chi tiết.",
-      specs: [
-        "Đầy đủ dụng cụ pha resin, cốc đo, găng tay, nhíp gắp hoa",
-        "Có video HD Youtube chi tiết dễ làm cho người mới bắt đầu"
-      ],
-      customOptions: ["Chọn tone hoa: Olive Green / Rose Pastel / Lavender"]
+      customOptions: ["Khắc tên & câu nguyện ước lên đế gỗ", "Đúc kèm nhẫn cưới giả kỷ niệm"]
     }
   ],
   workshops: [
