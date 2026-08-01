@@ -37,12 +37,15 @@ body {
   line-height: 1.7;
 }
 
-/* Header Aesthetics - Ultra Clean */
+/* Header Aesthetics - Ultra Clean Opaque Solid White Header */
 .glass-header {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(235, 239, 229, 0.8);
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #EBEFE5;
+  box-shadow: 0 2px 12px rgba(30, 41, 22, 0.04);
+  z-index: 1000 !important;
+  position: sticky;
+  top: 0;
 }
 
 /* Minimal Hero Container */
