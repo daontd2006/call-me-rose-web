@@ -43,4 +43,4 @@ git checkout v1.1.0-tabview
 ---
 
 🌐 **Link Website Phiên Bản v1.0.0-classic Đã Khôi Phục Live:**
-👉 **[https://call-me-rose-web-daontd2006-1717s-projects.vercel.app](https://call-me-rose-web-daontd2006-1717s-projects.vercel.app)**
+👉 **[https://callmerose.io.vn](https://callmerose.io.vn)**

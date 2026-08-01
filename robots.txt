@@ -4,5 +4,5 @@ Allow: /
 Disallow: /admin
 
 # Host and Sitemap
-Host: https://call-me-rose-web-daontd2006-1717s-projects.vercel.app
-Sitemap: https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/sitemap.xml
+Host: https://callmerose.io.vn
+Sitemap: https://callmerose.io.vn/sitemap.xml
