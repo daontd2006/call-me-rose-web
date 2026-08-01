@@ -14,22 +14,24 @@
   <meta name="language" content="Vietnamese">
   <link rel="canonical" href="https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/">
 
-  <!-- Open Graph Meta Tags -->
+  <!-- Open Graph / Facebook Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/">
   <meta property="og:site_name" content="Call Me Rose">
   <meta property="og:title" content="Call Me Rose | Đèn Resin Hoa Cưới &amp; Phụ Kiện Cô Dâu Thủ Công">
   <meta property="og:description" content="Lưu giữ khoảnh khắc ngày chung đôi trong khối resin nghệ thuật. Đèn ngủ Resin Floral Light, phụ kiện cài tóc cô dâu &amp; Workshop đúc resin.">
   <meta property="og:image" content="https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/assets/resin_floral_light.png">
+  <meta property="og:image:alt" content="Đèn ngủ Resin Floral Light hoa cưới Call Me Rose">
   <meta property="og:locale" content="vi_VN">
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/">
   <meta name="twitter:title" content="Call Me Rose | Đèn Resin Hoa Cưới &amp; Phụ Kiện Cô Dâu Thủ Công">
   <meta name="twitter:description" content="Lưu giữ khoảnh khắc ngày chung đôi trong khối resin nghệ thuật. Đèn ngủ Resin Floral Light &amp; Workshop trải nghiệm.">
   <meta name="twitter:image" content="https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/assets/resin_floral_light.png">
 
-  <!-- JSON-LD Structured Data -->
+  <!-- Structured Data / JSON-LD (Google Schema.org) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,13 +40,54 @@
     "image": "https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/assets/resin_floral_light.png",
     "url": "https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/",
     "telephone": "+84987654321",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "28 Ngõ Tràng Tiền",
       "addressLocality": "Hoàn Kiếm",
       "addressRegion": "Hà Nội",
       "addressCountry": "VN"
-    }
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 21.0254,
+      "longitude": 105.8560
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "20:30"
+    },
+    "sameAs": [
+      "https://www.facebook.com/callmerose.wedding",
+      "https://www.tiktok.com/@callmerose.florals"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang Chủ",
+      "item": "https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sản Phẩm Resin Light",
+      "item": "https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/#shop"
+    },{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Workshop Đúc Resin",
+      "item": "https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/#workshop"
+    }]
   }
   </script>
   
@@ -86,12 +129,12 @@
 </head>
 <body class="bg-white text-olive-800 antialiased">
 
-  <!-- ULTRA MINIMAL HEADER WITH TAB NAVIGATION -->
+  <!-- ULTRA MINIMAL HEADER -->
   <header class="sticky top-0 z-40 glass-header" role="banner">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
       <!-- Brand Logo Left -->
-      <a href="#home" data-tab="home" class="flex items-center gap-2 group nav-tab-link" aria-label="Trang chủ Call Me Rose">
+      <a href="#" class="flex items-center gap-2 group" aria-label="Trang chủ Call Me Rose">
         <div class="w-8 h-8 rounded-full bg-olive-100 flex items-center justify-center text-olive-600 group-hover:bg-olive-500 group-hover:text-white transition-colors">
           <i data-lucide="flower-2" class="w-4 h-4"></i>
         </div>
@@ -100,15 +143,14 @@
         </span>
       </a>
 
-      <!-- Tab Navigation Center -->
-      <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-wider text-olive-800" role="navigation" aria-label="Menu chính">
-        <a href="#home" data-tab="home" class="nav-tab-link hover:text-olive-500 transition-colors py-1 nav-tab-active">Home</a>
-        <a href="#shop" data-tab="shop" class="nav-tab-link hover:text-olive-500 transition-colors py-1">Shop</a>
-        <a href="#philosophy" data-tab="philosophy" class="nav-tab-link hover:text-olive-500 transition-colors py-1">About</a>
-        <a href="#workshop" data-tab="workshop" class="nav-tab-link hover:text-olive-500 transition-colors py-1">Workshop</a>
-        <a href="#preservation" data-tab="preservation" class="nav-tab-link hover:text-olive-500 transition-colors py-1">Preservation</a>
-        <a href="#blog" data-tab="blog" class="nav-tab-link hover:text-olive-500 transition-colors py-1">Blog</a>
-        <a href="#contact" data-tab="contact" class="nav-tab-link hover:text-olive-500 transition-colors py-1">Contact</a>
+      <!-- Navigation Center -->
+      <nav class="hidden md:flex items-center space-x-10 text-xs font-semibold uppercase tracking-wider text-olive-800" role="navigation" aria-label="Menu chính">
+        <a href="#shop" class="hover:text-olive-500 transition-colors">Shop</a>
+        <a href="#philosophy" class="hover:text-olive-500 transition-colors">About</a>
+        <a href="#workshop" class="hover:text-olive-500 transition-colors">Workshop</a>
+        <a href="#custom-order" class="hover:text-olive-500 transition-colors">Preservation</a>
+        <a href="#blog" class="hover:text-olive-500 transition-colors">Blog</a>
+        <a href="#contact" class="hover:text-olive-500 transition-colors">Contact</a>
       </nav>
 
       <!-- Action Buttons Right -->
@@ -130,451 +172,200 @@
     </div>
   </header>
 
-  <!-- MAIN TAB-BASED CONTENT -->
+  <!-- MAIN CONTENT CONTAINER -->
   <main id="main-content" role="main">
 
-    <!-- TAB 1: HOME (Trang Chủ Phong Cách Nghệ Thuật Hoa Cưới) -->
-    <div id="tab-home" class="tab-content">
+    <!-- HERO SECTION -->
+    <section class="hero-minimal-bg min-h-[580px] flex items-center justify-center text-center px-4 py-24 relative">
+      <div class="hero-overlay absolute inset-0"></div>
       
-      <!-- HERO BANNER -->
-      <section class="hero-minimal-bg min-h-[580px] flex items-center justify-center text-center px-4 py-20 relative">
-        <div class="hero-overlay absolute inset-0"></div>
+      <div class="relative z-10 max-w-3xl mx-auto space-y-6">
         
-        <div class="relative z-10 max-w-4xl mx-auto space-y-6">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-olive-100/90 text-olive-800 text-xs font-semibold uppercase tracking-wider border border-olive-200">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-olive-600"></i> Handcrafted Wedding Resin Art
-          </div>
+        <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-olive-900 tracking-tight leading-tight">
+          Lưu Giữ Kỷ Niệm Trong Mỗi Cánh Hoa
+        </h1>
 
-          <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-olive-900 tracking-tight leading-tight">
-            Giữ Trọn Khoảnh Khắc Ngày Chung Đôi <br class="hidden sm:block">Trong Khối Resin Vĩnh Cửu
-          </h1>
+        <p class="text-olive-700 text-base sm:text-lg max-w-xl mx-auto font-normal leading-relaxed">
+          Đèn ngủ Resin Floral Light &amp; phụ kiện hoa cưới thủ công tinh tế dành riêng cho hành trình hạnh phúc của bạn.
+        </p>
 
-          <p class="text-olive-700 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-            Call Me Rose biến những bó hoa cưới rạng rỡ thành tác phẩm <strong>Đèn ngủ Resin Floral Light</strong> nghệ thuật &amp; <strong>phụ kiện cô dâu thủ công độc bản</strong> lưu giữ tình yêu trăm năm.
-          </p>
-
-          <div class="pt-4 flex justify-center gap-4 flex-wrap">
-            <a href="#shop" data-tab="shop" class="nav-tab-link btn-pill-olive">
-              Khám Phá Cửa Hàng <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-            </a>
-            <a href="#workshop" data-tab="workshop" class="nav-tab-link px-7 py-3 rounded-full border border-olive-400 text-olive-800 text-xs font-semibold hover:bg-olive-50 transition-all shadow-sm">
-              <i data-lucide="calendar" class="w-4 h-4 inline mr-1 text-olive-600"></i> Đặt Lịch Workshop
-            </a>
-          </div>
-
-          <!-- Trust Highlights -->
-          <div class="pt-8 border-t border-olive-200/60 max-w-xl mx-auto grid grid-cols-3 gap-4 text-center">
-            <div>
-              <div class="font-sans text-xl font-bold text-olive-900">100%</div>
-              <div class="text-[11px] text-olive-600">Hoa Thật Sấy Thăng Hoa</div>
-            </div>
-            <div>
-              <div class="font-sans text-xl font-bold text-olive-900">10 Năm</div>
-              <div class="text-[11px] text-olive-600">Cam Kết Chống Ố Vàng</div>
-            </div>
-            <div>
-              <div class="font-sans text-xl font-bold text-olive-900">5.0 ★</div>
-              <div class="text-[11px] text-olive-600">Đánh Giá Từ Các Cô Dâu</div>
-            </div>
-          </div>
+        <div class="pt-4">
+          <a href="#shop" class="btn-pill-olive" title="Khám phá bộ sưu tập hoa cưới resin">
+            Khám Phá Bộ Sưu Tập
+          </a>
         </div>
-      </section>
 
-      <!-- 3 CRAFTSMANSHIP PILLARS (Nghệ Thuật Chế Tác Thủ Công) -->
-      <section class="py-20 bg-white border-b border-olive-100">
-        <div class="max-w-6xl mx-auto px-6">
+      </div>
+    </section>
+
+    <!-- 3 FEATURE PILLARS SECTION -->
+    <section class="py-20 bg-white border-b border-olive-100" aria-label="Đặc điểm thương hiệu">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
           
-          <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Tỉ Mỉ Trong Từng Chi Tiết</span>
-            <h2 class="font-sans text-3xl font-bold text-olive-900">Quy Trình Chế Tác Độc Bản</h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-            
-            <div class="clean-card p-8 space-y-4 hover:border-olive-400 transition-all">
-              <div class="feature-badge-icon">
-                <i data-lucide="flower-2" class="w-6 h-6"></i>
-              </div>
-              <h3 class="font-sans text-base font-bold text-olive-900">1. Sấy Thăng Hoa Hoa Tươi</h3>
-              <p class="text-xs text-olive-600 leading-relaxed">
-                Từng bông hoa cưới tươi được vùi trong cát Silica Gel mịn 7-10 ngày giúp rút sạch độ ẩm mà vẫn giữ nguyên hình dáng và sắc màu tự nhiên 100%.
-              </p>
+          <div class="space-y-3 px-4">
+            <div class="feature-badge-icon">
+              <i data-lucide="sparkles" class="w-6 h-6"></i>
             </div>
-
-            <div class="clean-card p-8 space-y-4 hover:border-olive-400 transition-all">
-              <div class="feature-badge-icon">
-                <i data-lucide="layers" class="w-6 h-6"></i>
-              </div>
-              <h3 class="font-sans text-base font-bold text-olive-900">2. Đúc Resin Trong Suốt 10 Lớp</h3>
-              <p class="text-xs text-olive-600 leading-relaxed">
-                Sử dụng dòng Resin AB cao cấp chuyên dụng không bọt khí, được thợ thủ công đổ từng lớp tỉ mỉ chiếu UV giúp hoa không bị dập cánh.
-              </p>
-            </div>
-
-            <div class="clean-card p-8 space-y-4 hover:border-olive-400 transition-all">
-              <div class="feature-badge-icon">
-                <i data-lucide="pen-tool" class="w-6 h-6"></i>
-              </div>
-              <h3 class="font-sans text-base font-bold text-olive-900">3. Cá Nhân Hóa Khắc Tên</h3>
-              <p class="text-xs text-olive-600 leading-relaxed">
-                Đế gỗ sồi tự nhiên được khắc tên chú rể &amp; cô dâu, ngày cưới hoặc lời thề nguyện tình yêu (Vows) riêng biệt cho từng cặp đôi.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- FEATURED PRODUCTS SHOWCASE ON HOME -->
-      <section class="py-20 bg-olive-50 border-b border-olive-100">
-        <div class="max-w-7xl mx-auto px-6">
-          
-          <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-              <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Tuyệt Tác Được Yêu Thích</span>
-              <h2 class="font-sans text-3xl font-bold text-olive-900 mt-1">Sản Phẩm Nổi Bật Dành Cho Ngày Cưới</h2>
-            </div>
-            <a href="#shop" data-tab="shop" class="nav-tab-link text-xs font-bold text-olive-600 hover:text-olive-900 transition-colors flex items-center gap-1 mt-4 md:mt-0">
-              Xem Toàn Bộ Sản Phẩm <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-
-          <!-- Quick Preview Cards -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="clean-card p-4 space-y-4 group cursor-pointer" onclick="openProductModal('prod-1')">
-              <div class="relative h-64 rounded-xl overflow-hidden bg-olive-100">
-                <img src="assets/resin_floral_light.png" alt="Đèn Resin Floral Light Rose White Gold" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <span class="absolute top-3 left-3 bg-olive-700 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full shadow">Bán Chạy Nhất</span>
-              </div>
-              <div class="space-y-1">
-                <span class="text-[10px] font-bold uppercase text-olive-400">Resin Floral Light</span>
-                <h3 class="font-sans text-base font-bold text-olive-900 group-hover:text-olive-500 transition-colors">Đèn Resin Hoa Cưới Bảo Tồn - Rose White Gold</h3>
-                <p class="text-xs text-olive-600 line-clamp-2">Khối resin trong suốt đúc hoa hồng cưới tươi kết hợp lá khuynh diệp và vảy vàng 24k trên đế gỗ sồi cảm ứng.</p>
-              </div>
-              <div class="pt-2 border-t border-olive-100 flex justify-between items-center">
-                <span class="text-sm font-bold text-olive-900">1.250.000đ</span>
-                <span class="text-xs font-semibold text-olive-600 group-hover:underline">Chi tiết <i data-lucide="chevron-right" class="w-3.5 h-3.5 inline"></i></span>
-              </div>
-            </div>
-
-            <div class="clean-card p-4 space-y-4 group cursor-pointer" onclick="openProductModal('prod-2')">
-              <div class="relative h-64 rounded-xl overflow-hidden bg-olive-100">
-                <img src="assets/bridal_hair_accessory.png" alt="Bộ Cài Tóc Hoa Tươi Phủ Resin Cô Dâu Olive Grace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <span class="absolute top-3 left-3 bg-olive-700 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full shadow">Phụ Kiện Cô Dâu</span>
-              </div>
-              <div class="space-y-1">
-                <span class="text-[10px] font-bold uppercase text-olive-400">Bridal Accessories</span>
-                <h3 class="font-sans text-base font-bold text-olive-900 group-hover:text-olive-500 transition-colors">Bộ Cài Tóc Hoa Tươi Phủ Resin Cô Dâu - Olive Grace</h3>
-                <p class="text-xs text-olive-600 line-clamp-2">Trâm cài tóc thủ công kết hợp hoa baby khô, hoa bơ thủy tiên phủ resin trong suốt siêu nhẹ cho tiệc cưới.</p>
-              </div>
-              <div class="pt-2 border-t border-olive-100 flex justify-between items-center">
-                <span class="text-sm font-bold text-olive-900">680.000đ</span>
-                <span class="text-xs font-semibold text-olive-600 group-hover:underline">Chi tiết <i data-lucide="chevron-right" class="w-3.5 h-3.5 inline"></i></span>
-              </div>
-            </div>
-
-            <div class="clean-card p-4 space-y-4 group cursor-pointer" onclick="openProductModal('prod-3')">
-              <div class="relative h-64 rounded-xl overflow-hidden bg-olive-100">
-                <img src="assets/resin_floral_light.png" alt="Khối Kỷ Vật Bảo Tồn Bó Hoa Cưới Cô Dâu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <span class="absolute top-3 left-3 bg-olive-700 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full shadow">Bảo Tồn Kỷ Niệm</span>
-              </div>
-              <div class="space-y-1">
-                <span class="text-[10px] font-bold uppercase text-olive-400">Custom Keepsakes</span>
-                <h3 class="font-sans text-base font-bold text-olive-900 group-hover:text-olive-500 transition-colors">Khối Kỷ Vật Bảo Tồn Bó Hoa Cưới (Custom Bouquet)</h3>
-                <p class="text-xs text-olive-600 line-clamp-2">Dịch vụ gửi bó hoa cưới ngay sau lễ cưới để đúc thành khối resin trong suốt nghệ thuật lưu giữ kỷ niệm trăm năm.</p>
-              </div>
-              <div class="pt-2 border-t border-olive-100 flex justify-between items-center">
-                <span class="text-sm font-bold text-olive-900">2.450.000đ</span>
-                <span class="text-xs font-semibold text-olive-600 group-hover:underline">Chi tiết <i data-lucide="chevron-right" class="w-3.5 h-3.5 inline"></i></span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- WORKSHOP TEASER SECTION -->
-      <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="clean-card p-8 md:p-12 border border-olive-200 bg-gradient-to-r from-olive-50 to-white flex flex-col md:flex-row items-center gap-8 justify-between shadow-sm">
-            <div class="space-y-3 max-w-xl text-left">
-              <span class="text-xs font-semibold uppercase tracking-widest text-olive-500">Trải Nghiệm Độc Đáo</span>
-              <h2 class="font-sans text-3xl font-bold text-olive-900">Tự Tay Đúc Đèn Resin Cho Tiệc Cưới Của Chính Bạn</h2>
-              <p class="text-xs text-olive-600 leading-relaxed">
-                Tham gia Workshop tại Call Me Rose Studio để cùng người thương lựa chọn từng cành hoa sấy khô, tự tay đổ resin và hoàn thiện chiếc đèn kỷ niệm mang dấu ấn riêng của hai bạn.
-              </p>
-              <div class="flex items-center gap-4 text-xs font-bold text-olive-800 pt-2">
-                <span>🕒 Thời lượng: 2.5 Giờ</span>
-                <span>☕ Miễn phí Welcome Drink</span>
-              </div>
-            </div>
-
-            <div class="shrink-0 text-center">
-              <a href="#workshop" data-tab="workshop" class="nav-tab-link btn-pill-olive shadow-md">
-                Đăng Ký Workshop Ngay <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- REVIEWS & TESTIMONIALS (Lời Yêu Thương Từ Các Cô Dâu) -->
-      <section class="py-20 bg-olive-50 border-t border-olive-100">
-        <div class="max-w-6xl mx-auto px-6">
-          
-          <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Cảm Nhận Thực Tế</span>
-            <h2 class="font-sans text-3xl font-bold text-olive-900">Lời Yêu Thương Từ Các Cô Dâu</h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div class="clean-card p-6 space-y-4">
-              <div class="flex items-center gap-1 text-gold text-xs">
-                <span>★★★★★</span>
-              </div>
-              <p class="text-xs text-olive-700 italic leading-relaxed">
-                "Bó hoa cưới trao tay trong ngày trọng đại của mình được Call Me Rose bảo tồn thành chiếc đèn resin cực kỳ trong và đẹp. Mỗi tối bật đèn lên hai vợ chồng lại nhớ về ngày chung đôi!"
-              </p>
-              <div class="pt-3 border-t border-olive-100 flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full bg-olive-200 font-bold text-olive-800 flex items-center justify-center text-xs">MA</div>
-                <div>
-                  <h4 class="text-xs font-bold text-olive-900">Cô Dâu Mai Anh</h4>
-                  <p class="text-[10px] text-olive-400">Đám cưới tháng 5/2026 • Hà Nội</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="clean-card p-6 space-y-4">
-              <div class="flex items-center gap-1 text-gold text-xs">
-                <span>★★★★★</span>
-              </div>
-              <p class="text-xs text-olive-700 italic leading-relaxed">
-                "Bộ trâm cài tóc hoa tươi phủ resin Olive Grace nhẹ và tinh tế lắm luôn. Đội cùng lụa gia tiên chụp ảnh ai cũng trầm trồ hỏi mua ở đâu. Rất đáng tiền!"
-              </p>
-              <div class="pt-3 border-t border-olive-100 flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full bg-olive-200 font-bold text-olive-800 flex items-center justify-center text-xs">TT</div>
-                <div>
-                  <h4 class="text-xs font-bold text-olive-900">Cô Dâu Thu Thảo</h4>
-                  <p class="text-[10px] text-olive-400">Đám cưới tháng 6/2026 • TP.HCM</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="clean-card p-6 space-y-4">
-              <div class="flex items-center gap-1 text-gold text-xs">
-                <span>★★★★★</span>
-              </div>
-              <p class="text-xs text-olive-700 italic leading-relaxed">
-                "Hai đứa mình rủ nhau đi Workshop tự làm đèn resin cưới làm kỷ niệm. Không gian studio siêu chill, chị chủ hướng dẫn nhiệt tình. Thành phẩm đúc ra mịn đẹp tuyệt vời!"
-              </p>
-              <div class="pt-3 border-t border-olive-100 flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full bg-olive-200 font-bold text-olive-800 flex items-center justify-center text-xs">HN</div>
-                <div>
-                  <h4 class="text-xs font-bold text-olive-900">Hoàng Nam &amp; Ngọc Hạnh</h4>
-                  <p class="text-[10px] text-olive-400">Khách Workshop cặp đôi</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-    </div>
-
-    <!-- TAB 2: SHOP (Cửa Hàng Sản Phẩm) -->
-    <div id="tab-shop" class="tab-content hidden">
-      <section class="py-16 bg-olive-50 min-h-[70vh]">
-        <div class="max-w-7xl mx-auto px-6">
-          
-          <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Bộ Sưu Tập Thủ Công</span>
-            <h2 class="font-sans text-3xl font-bold text-olive-900">Sản Phẩm Hoa Cưới Resin</h2>
-          </div>
-
-          <!-- Filter Tabs -->
-          <div class="flex flex-wrap justify-center gap-3 mb-10" id="category-filters" role="tablist">
-            <button data-cat="all" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-olive-500 text-white shadow-sm filter-btn">Tất Cả</button>
-            <button data-cat="resin-light" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn">Resin Floral Light</button>
-            <button data-cat="bridal-accessories" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn">Phụ Kiện Cô Dâu</button>
-            <button data-cat="keepsakes" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn">Bảo Tồn Hoa Cưới</button>
-          </div>
-
-          <!-- Product Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid">
-            <!-- Rendered by JS -->
-          </div>
-
-        </div>
-      </section>
-    </div>
-
-    <!-- TAB 3: PHILOSOPHY (Triết Lý & Giới Thiệu) -->
-    <div id="tab-philosophy" class="tab-content hidden">
-      <section class="py-24 bg-white min-h-[70vh] flex items-center justify-center text-center">
-        <div class="max-w-3xl mx-auto px-6 space-y-8">
-          
-          <div class="w-16 h-16 rounded-full bg-olive-50 text-olive-600 mx-auto flex items-center justify-center">
-            <i data-lucide="flower-2" class="w-8 h-8"></i>
-          </div>
-
-          <h2 class="font-sans text-3xl sm:text-4xl font-bold text-olive-900 tracking-tight">
-            Triết Lý Của Call Me Rose
-          </h2>
-
-          <p class="text-olive-700 text-base leading-relaxed font-normal">
-            Tại Call Me Rose, chúng tôi tin rằng mỗi bó hoa cưới mang theo những lời hứa sâu sắc nhất của ngày chung đôi. Các tác phẩm resin thủ công được tạo ra để kết nối cảm xúc, biến khoảnh khắc thoáng qua trong ngày cưới thành kỷ vật trường tồn cùng năm tháng. Mỗi chiếc đèn resin là sự kết hợp giữa nét tinh khôi tự nhiên và khoảng không gian tĩnh lặng, mang lại sự bình yên trong chính ngôi nhà của bạn.
-          </p>
-
-          <div class="pt-4 border-t border-olive-100 grid grid-cols-3 gap-6 text-center max-w-lg mx-auto">
-            <div>
-              <div class="text-2xl font-bold text-olive-900 font-sans">100%</div>
-              <div class="text-xs text-olive-500">Hoa Tự Nhiên Sấy Khô</div>
-            </div>
-            <div>
-              <div class="text-2xl font-bold text-olive-900 font-sans">10 Năm</div>
-              <div class="text-xs text-olive-500">Bảo Hành Resin Trong Suốt</div>
-            </div>
-            <div>
-              <div class="text-2xl font-bold text-olive-900 font-sans">5.0 ★</div>
-              <div class="text-xs text-olive-500">Đánh Giá Từ Cô Dâu</div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-    </div>
-
-    <!-- TAB 4: WORKSHOP (Lịch Đặt Lớp Học) -->
-    <div id="tab-workshop" class="tab-content hidden">
-      <section class="py-20 bg-white min-h-[70vh]">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Lớp Học Trải Nghiệm</span>
-            <h2 class="font-sans text-3xl font-bold text-olive-900">Đặt Lịch Workshop Đúc Resin</h2>
-            <p class="text-xs text-olive-600">Tự tay đúc đèn ngủ resin hoa cưới trong không gian workshop yên bình tại Hà Nội</p>
-          </div>
-
-          <div class="space-y-6 max-w-4xl mx-auto" id="workshop-list">
-            <!-- Rendered by JS -->
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <!-- TAB 5: PRESERVATION (Bảo Tồn Hoa Cưới Theo Yêu Cầu) -->
-    <div id="tab-preservation" class="tab-content hidden">
-      <section class="py-20 bg-olive-50 min-h-[70vh]">
-        <div class="max-w-3xl mx-auto px-6 text-center space-y-8">
-          <div class="space-y-3">
-            <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Dịch Vụ Đặt Theo Yêu Cầu</span>
-            <h2 class="font-sans text-3xl font-bold text-olive-900">Bảo Tồn Bó Hoa Cưới Của Bạn</h2>
-            <p class="text-xs text-olive-600 max-w-lg mx-auto">
-              Gửi bó hoa tươi sau lễ cưới cho Call Me Rose để chế tác thành tác phẩm đèn resin nghệ thuật lưu giữ kỷ niệm.
+            <h3 class="font-sans text-base font-bold text-olive-900">Hoa Thật 100%</h3>
+            <p class="text-xs text-olive-600 leading-relaxed">
+              Từng cánh hoa sấy khô thăng hoa giữ trọn sắc màu nguyên bản tự nhiên.
             </p>
           </div>
 
-          <form id="custom-order-form" class="bg-white p-8 rounded-2xl border border-olive-100 text-left grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-name">Họ và tên cô dâu / chú rể</label>
-              <input type="text" id="cust-name" required placeholder="Họ và tên cô dâu / chú rể" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+          <div class="space-y-3 px-4">
+            <div class="feature-badge-icon">
+              <i data-lucide="sun" class="w-6 h-6"></i>
             </div>
-            <div>
-              <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-phone">Số Zalo liên hệ</label>
-              <input type="tel" id="cust-phone" required placeholder="0901 234 567" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+            <h3 class="font-sans text-base font-bold text-olive-900">Đèn Resin Cao Cấp</h3>
+            <p class="text-xs text-olive-600 leading-relaxed">
+              Thiết kế tối giản cho không gian phòng ngủ &amp; tiệc cưới hiện đại, bảo hành 10 năm.
+            </p>
+          </div>
+
+          <div class="space-y-3 px-4">
+            <div class="feature-badge-icon">
+              <i data-lucide="heart" class="w-6 h-6"></i>
             </div>
-            <div>
-              <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-date">Ngày cưới diễn ra</label>
-              <input type="date" id="cust-date" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-type">Kiểu dáng muốn đúc</label>
-              <select id="cust-type" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
-                <option value="Đèn Resin Floral Light Đế Gỗ">Đèn Resin Floral Light Đế Gỗ</option>
-                <option value="Khối Resin Kỷ Vật Trái Tim">Khối Resin Kỷ Vật Trái Tim</option>
-                <option value="Phụ Kiện Cài Tóc & Trang Sức">Phụ Kiện Cài Tóc &amp; Trang Sức</option>
-              </select>
-            </div>
-            <div class="sm:col-span-2">
-              <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-notes">Ghi chú (Tên khắc, màu hoa)</label>
-              <textarea id="cust-notes" rows="3" placeholder="Ghi chú thêm thông tin cho Call Me Rose..." class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500"></textarea>
-            </div>
-            <div class="sm:col-span-2 text-center pt-2">
-              <button type="submit" class="btn-pill-olive">
-                Gửi Yêu Cầu Bảo Tồn
-              </button>
-            </div>
-          </form>
+            <h3 class="font-sans text-base font-bold text-olive-900">Kỷ Vật Độc Bản</h3>
+            <p class="text-xs text-olive-600 leading-relaxed">
+              Chế tác thủ công riêng biệt theo yêu cầu từng cô dâu và bó hoa cưới trao tay.
+            </p>
+          </div>
+
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <!-- TAB 6: BLOG (Tạp Chí & Bài Viết) -->
-    <div id="tab-blog" class="tab-content hidden">
-      <section class="py-20 bg-white min-h-[70vh]">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Tạp Chí Hoa Cưới</span>
-            <h2 class="font-sans text-3xl font-bold text-olive-900">Stories &amp; Blog Hoa Cưới</h2>
-          </div>
+    <!-- OUR PHILOSOPHY SECTION -->
+    <section id="philosophy" class="py-24 bg-white text-center">
+      <div class="max-w-3xl mx-auto px-6 space-y-6">
+        
+        <h2 class="font-sans text-3xl sm:text-4xl font-bold text-olive-900 tracking-tight">
+          Triết Lý Của Call Me Rose
+        </h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="blog-grid">
-            <!-- Rendered by JS -->
-          </div>
+        <p class="text-olive-700 text-sm sm:text-base leading-relaxed font-normal">
+          Tại Call Me Rose, chúng tôi tin rằng mỗi bó hoa cưới mang theo những lời hứa sâu sắc nhất của ngày chung đôi. Các tác phẩm resin thủ công được tạo ra để kết nối cảm xúc, biến khoảnh khắc thoáng qua trong ngày cưới thành kỷ vật trường tồn cùng năm tháng. Mỗi chiếc đèn resin là sự kết hợp giữa nét tinh khôi tự nhiên và khoảng không gian tĩnh lặng, mang lại sự bình yên trong chính ngôi nhà của bạn.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- PRODUCTS CATALOG SECTION -->
+    <section id="shop" class="py-20 bg-olive-50 border-t border-olive-100">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
+          <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Bộ Sưu Tập Thủ Công</span>
+          <h2 class="font-sans text-3xl font-bold text-olive-900">Sản Phẩm Hoa Cưới Resin</h2>
         </div>
-      </section>
-    </div>
 
-    <!-- TAB 7: CONTACT (Thông Tin Liên Hệ) -->
-    <div id="tab-contact" class="tab-content hidden">
-      <section class="py-24 bg-white min-h-[70vh] flex items-center justify-center">
-        <div class="max-w-3xl mx-auto px-6 text-center space-y-8 w-full">
-          <div class="space-y-2">
-            <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Kết Nối Với Studio</span>
-            <h2 class="font-sans text-3xl font-bold text-olive-900">Thông Tin Liên Hệ</h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div class="bg-olive-50 p-6 rounded-2xl border border-olive-100 space-y-2">
-              <div class="w-10 h-10 rounded-full bg-white text-olive-600 flex items-center justify-center font-bold">
-                <i data-lucide="map-pin" class="w-5 h-5"></i>
-              </div>
-              <h4 class="font-bold text-sm text-olive-900">Địa Chỉ Studio</h4>
-              <p class="text-xs text-olive-600" id="footer-address">28 Ngõ Tràng Tiền, Quận Hoàn Kiếm, Hà Nội</p>
-            </div>
-
-            <div class="bg-olive-50 p-6 rounded-2xl border border-olive-100 space-y-2">
-              <div class="w-10 h-10 rounded-full bg-white text-olive-600 flex items-center justify-center font-bold">
-                <i data-lucide="phone" class="w-5 h-5"></i>
-              </div>
-              <h4 class="font-bold text-sm text-olive-900">Hotline / Zalo</h4>
-              <p class="text-xs text-olive-600" id="footer-phone">0987 654 321</p>
-            </div>
-
-            <div class="bg-olive-50 p-6 rounded-2xl border border-olive-100 space-y-2">
-              <div class="w-10 h-10 rounded-full bg-white text-olive-600 flex items-center justify-center font-bold">
-                <i data-lucide="clock" class="w-5 h-5"></i>
-              </div>
-              <h4 class="font-bold text-sm text-olive-900">Giờ Mở Cửa</h4>
-              <p class="text-xs text-olive-600">09:00 - 20:30 (Tất cả các ngày trong tuần)</p>
-            </div>
-          </div>
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12" id="category-filters" role="tablist">
+          <button data-cat="all" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-olive-500 text-white shadow-sm filter-btn" role="tab">Tất Cả</button>
+          <button data-cat="resin-light" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Resin Floral Light</button>
+          <button data-cat="bridal-accessories" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Phụ Kiện Cô Dâu</button>
+          <button data-cat="keepsakes" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Bảo Tồn Hoa Cưới</button>
         </div>
-      </section>
-    </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid">
+          <!-- Rendered by JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WORKSHOP BOOKING SECTION -->
+    <section id="workshop" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
+          <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Lớp Học Trải Nghiệm</span>
+          <h2 class="font-sans text-3xl font-bold text-olive-900">Đặt Lịch Workshop Đúc Resin</h2>
+          <p class="text-xs text-olive-600">Tự tay đúc đèn ngủ resin hoa cưới trong không gian workshop yên bình tại Hà Nội</p>
+        </div>
+
+        <div class="space-y-6 max-w-4xl mx-auto" id="workshop-list">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- BOUQUET PRESERVATION REQUEST SECTION -->
+    <section id="custom-order" class="py-20 bg-olive-50 border-t border-olive-100">
+      <div class="max-w-3xl mx-auto px-6 text-center space-y-8">
+        <div class="space-y-3">
+          <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Dịch Vụ Đặt Theo Yêu Cầu</span>
+          <h2 class="font-sans text-3xl font-bold text-olive-900">Bảo Tồn Bó Hoa Cưới Của Bạn</h2>
+          <p class="text-xs text-olive-600 max-w-lg mx-auto">
+            Gửi bó hoa tươi sau lễ cưới cho Call Me Rose để chế tác thành tác phẩm đèn resin nghệ thuật lưu giữ kỷ niệm.
+          </p>
+        </div>
+
+        <form id="custom-order-form" class="bg-white p-8 rounded-2xl border border-olive-100 text-left grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-name">Họ và tên cô dâu / chú rể</label>
+            <input type="text" id="cust-name" required placeholder="Họ và tên cô dâu / chú rể" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-phone">Số Zalo liên hệ</label>
+            <input type="tel" id="cust-phone" required placeholder="0901 234 567" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-date">Ngày cưới diễn ra</label>
+            <input type="date" id="cust-date" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-type">Kiểu dáng muốn đúc</label>
+            <select id="cust-type" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+              <option value="Đèn Resin Floral Light Đế Gỗ">Đèn Resin Floral Light Đế Gỗ</option>
+              <option value="Khối Resin Kỷ Vật Trái Tim">Khối Resin Kỷ Vật Trái Tim</option>
+              <option value="Phụ Kiện Cài Tóc & Trang Sức">Phụ Kiện Cài Tóc &amp; Trang Sức</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-notes">Ghi chú (Tên khắc, màu hoa)</label>
+            <textarea id="cust-notes" rows="3" placeholder="Ghi chú thêm thông tin cho Call Me Rose..." class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500"></textarea>
+          </div>
+          <div class="sm:col-span-2 text-center pt-2">
+            <button type="submit" class="btn-pill-olive">
+              Gửi Yêu Cầu Bảo Tồn
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- BLOG / STORIES SECTION -->
+    <section id="blog" class="py-24 bg-white">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
+          <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Tạp Chí Hoa Cưới</span>
+          <h2 class="font-sans text-3xl font-bold text-olive-900">Stories &amp; Blog Hoa Cưới</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="blog-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-olive-900 text-olive-100 py-12 border-t border-olive-800" role="contentinfo">
-    <div class="max-w-6xl mx-auto px-6 text-center space-y-6">
+  <footer id="contact" class="bg-olive-900 text-olive-100 py-16 border-t border-olive-800" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
       <div class="space-y-2">
-        <h3 class="font-sans text-xl font-bold text-white">Call Me Rose</h3>
+        <h3 class="font-sans text-2xl font-bold text-white">Call Me Rose</h3>
         <p class="text-xs text-olive-300 max-w-md mx-auto" id="footer-slogan">
           Handcrafted Wedding Florals &amp; Resin Keepsakes.
         </p>
+      </div>
+
+      <div class="flex justify-center gap-6 text-xs text-olive-300">
+        <span>Hotline/Zalo: <strong id="footer-phone" class="text-white">0987 654 321</strong></span>
+        <span>Địa chỉ: <strong id="footer-address" class="text-white">28 Ngõ Tràng Tiền, Hà Nội</strong></span>
       </div>
 
       <div class="flex justify-center gap-4">
@@ -586,7 +377,7 @@
         </a>
       </div>
 
-      <p class="text-[11px] text-olive-500 pt-4 border-t border-olive-800">
+      <p class="text-[11px] text-olive-500 pt-6 border-t border-olive-800">
         © 2026 Call Me Rose Studio. All rights reserved. Handcrafted Wedding Art.
       </p>
     </div>
@@ -718,30 +509,6 @@
       </div>
 
       <div id="admin-tab-content"></div>
-    </div>
-  </div>
-
-  <!-- MOBILE MENU DRAWER -->
-  <div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden">
-    <div class="modal-backdrop absolute inset-0" id="close-mobile-menu-backdrop"></div>
-    <div class="relative bg-white w-64 h-full p-6 shadow-2xl z-10 flex flex-col justify-between animate-slide-left">
-      <div class="space-y-6">
-        <div class="flex items-center justify-between border-b border-olive-100 pb-4">
-          <span class="font-bold text-olive-900 text-sm">Call Me Rose</span>
-          <button id="close-mobile-menu-btn" class="text-olive-500" aria-label="Đóng menu">
-            <i data-lucide="x" class="w-5 h-5"></i>
-          </button>
-        </div>
-        <nav class="flex flex-col space-y-4 text-xs font-semibold uppercase tracking-wider text-olive-800">
-          <a href="#home" data-tab="home" class="nav-tab-link py-2 border-b border-olive-50">Home</a>
-          <a href="#shop" data-tab="shop" class="nav-tab-link py-2 border-b border-olive-50">Shop</a>
-          <a href="#philosophy" data-tab="philosophy" class="nav-tab-link py-2 border-b border-olive-50">About</a>
-          <a href="#workshop" data-tab="workshop" class="nav-tab-link py-2 border-b border-olive-50">Workshop</a>
-          <a href="#preservation" data-tab="preservation" class="nav-tab-link py-2 border-b border-olive-50">Preservation</a>
-          <a href="#blog" data-tab="blog" class="nav-tab-link py-2 border-b border-olive-50">Blog</a>
-          <a href="#contact" data-tab="contact" class="nav-tab-link py-2 border-b border-olive-50">Contact</a>
-        </nav>
-      </div>
     </div>
   </div>
 
