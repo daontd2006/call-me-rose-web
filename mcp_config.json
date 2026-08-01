@@ -11,8 +11,8 @@
       "command": "npx",
       "args": ["-y", "@supabase/mcp-server-supabase"],
       "env": {
-        "SUPABASE_URL": "YOUR_SUPABASE_PROJECT_URL",
-        "SUPABASE_SERVICE_ROLE_KEY": "YOUR_SUPABASE_SERVICE_ROLE_KEY"
+        "SUPABASE_URL": "https://vtmstzzfixrhbwvufflr.supabase.co",
+        "SUPABASE_SERVICE_ROLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ0bXN0enpmaXhyaGJ3dnVmZmxyIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4NTU1MDUyNywiZXhwIjoyMTAxMTI2NTI3fQ.OJ2knQ9J7rcv3kddKje1d32r02_E81lWMSC-r0qie-o"
       }
     },
     "vercel": {

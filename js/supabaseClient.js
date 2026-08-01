@@ -24,15 +24,16 @@ class SupabaseManager {
   }
 
   getConfig() {
+    let savedConfig = null;
     try {
       const saved = localStorage.getItem('CALL_ME_ROSE_SUPABASE_CONFIG');
-      if (saved) return JSON.parse(saved);
+      if (saved) savedConfig = JSON.parse(saved);
     } catch (e) {}
     
-    // Default placeholder config
+    // Default project config from user Supabase account
     return {
-      url: window.ENV_SUPABASE_URL || "",
-      key: window.ENV_SUPABASE_ANON_KEY || ""
+      url: savedConfig?.url || window.ENV_SUPABASE_URL || "https://vtmstzzfixrhbwvufflr.supabase.co",
+      key: savedConfig?.key || window.ENV_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ0bXN0enpmaXhyaGJ3dnVmZmxyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU1NTA1MjcsImV4cCI6MjEwMTEyNjUyN30.cSvNPLEHqlwO8bABuhrrSnEYcRpQbo-vOgwJrIFWi8Q"
     };
   }
 
