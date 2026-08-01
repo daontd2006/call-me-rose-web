@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Quản Lý Shop - Call Me Rose Admin</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            olive: {
+              50: '#F9FAF6',
+              100: '#EBEFE5',
+              200: '#C8D4B4',
+              300: '#A3B18A',
+              400: '#8A9A5B',
+              500: '#6E7E44',
+              600: '#586634',
+              700: '#3D4A21',
+              800: '#24291F',
+              900: '#191C15'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', '-apple-system', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & Supabase SDK -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Custom Style System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-olive-50 text-olive-900 min-h-screen antialiased flex flex-col">
+
+  <!-- ADMIN HEADER BAR -->
+  <header class="bg-white border-b border-olive-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Admin Title -->
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2 text-olive-900 hover:text-olive-600 transition-colors">
+          <div class="w-8 h-8 rounded-full bg-olive-100 flex items-center justify-center text-olive-600 font-bold">
+            <i data-lucide="flower-2" class="w-4 h-4"></i>
+          </div>
+          <span class="font-bold text-base tracking-tight" id="adm-brand-header">Call Me Rose Admin</span>
+        </a>
+        <span class="text-xs bg-olive-100 text-olive-800 font-semibold px-2.5 py-0.5 rounded-full">Bảng Quản Lý Shop</span>
+      </div>
+
+      <!-- Quick Action Controls -->
+      <div class="flex items-center gap-4 text-xs font-semibold">
+        <a href="index.html" target="_blank" class="text-olive-600 hover:text-olive-900 flex items-center gap-1">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Xem Website Trực Tuyến
+        </a>
+        <button id="admin-logout-btn" class="bg-olive-100 hover:bg-olive-200 text-olive-800 px-3 py-1.5 rounded-full transition-colors flex items-center gap-1">
+          <i data-lucide="log-out" class="w-3.5 h-3.5"></i> Đăng Xuất
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- LOGIN CONTAINER (FOR UNAUTHENTICATED ACCESS) -->
+  <div id="admin-login-view" class="flex-1 flex items-center justify-center p-6">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full border border-olive-200 shadow-xl text-center space-y-6">
+      <div class="w-14 h-14 rounded-full bg-olive-100 text-olive-600 mx-auto flex items-center justify-center">
+        <i data-lucide="shield-check" class="w-7 h-7"></i>
+      </div>
+      <div>
+        <h2 class="font-sans text-2xl font-bold text-olive-900">Đăng Nhập Trang Quản Lý</h2>
+        <p class="text-xs text-olive-500 mt-1">Vui lòng nhập tài khoản admin để quản lý shop</p>
+      </div>
+
+      <form id="page-login-form" class="space-y-4 text-left">
+        <div>
+          <label class="block text-xs font-bold text-olive-700 mb-1">Tài khoản</label>
+          <input type="text" id="page-user" required value="admin" class="w-full bg-olive-50 border border-olive-200 rounded-full py-2.5 px-4 text-xs text-olive-900 focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-olive-700 mb-1">Mật khẩu</label>
+          <input type="password" id="page-pass" required value="123456" class="w-full bg-olive-50 border border-olive-200 rounded-full py-2.5 px-4 text-xs text-olive-900 focus:outline-none">
+        </div>
+        <button type="submit" class="w-full btn-pill-olive text-xs py-3 mt-2">
+          Đăng Nhập Quản Lý
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- DASHBOARD MAIN VIEW (HIDDEN BY DEFAULT UNTIL LOGIN) -->
+  <div id="admin-dashboard-view" class="flex-1 hidden max-w-7xl w-full mx-auto px-6 py-8">
+    
+    <!-- STATS OVERVIEW CARDS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      
+      <div class="bg-white p-6 rounded-2xl border border-olive-200 shadow-sm space-y-2">
+        <div class="flex items-center justify-between text-olive-500 text-xs font-semibold">
+          <span>Tổng Đơn Hàng</span>
+          <i data-lucide="shopping-cart" class="w-4 h-4 text-olive-600"></i>
+        </div>
+        <div class="text-2xl font-bold text-olive-900" id="stat-total-orders">0</div>
+        <div class="text-[11px] text-olive-400">Đơn hàng mua trực tuyến</div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-olive-200 shadow-sm space-y-2">
+        <div class="flex items-center justify-between text-olive-500 text-xs font-semibold">
+          <span>Lịch Workshop</span>
+          <i data-lucide="calendar" class="w-4 h-4 text-olive-600"></i>
+        </div>
+        <div class="text-2xl font-bold text-olive-900" id="stat-total-bookings">0</div>
+        <div class="text-[11px] text-olive-400">Lượt khách đăng ký ca học</div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-olive-200 shadow-sm space-y-2">
+        <div class="flex items-center justify-between text-olive-500 text-xs font-semibold">
+          <span>Sản Phẩm Shop</span>
+          <i data-lucide="package" class="w-4 h-4 text-olive-600"></i>
+        </div>
+        <div class="text-2xl font-bold text-olive-900" id="stat-total-products">0</div>
+        <div class="text-[11px] text-olive-400">Đèn resin &amp; Phụ kiện</div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl border border-olive-200 shadow-sm space-y-2">
+        <div class="flex items-center justify-between text-olive-500 text-xs font-semibold">
+          <span>Kết Nối Cloud</span>
+          <i data-lucide="database" class="w-4 h-4 text-olive-600"></i>
+        </div>
+        <div class="text-sm font-bold text-olive-700" id="stat-cloud-status">Supabase &amp; Vercel Active</div>
+        <div class="text-[11px] text-olive-400">Đã đồng bộ tự động 100%</div>
+      </div>
+
+    </div>
+
+    <!-- MAIN ADMIN CONTENT WITH TAB NAVIGATION -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- ADMIN SIDEBAR MENU -->
+      <aside class="lg:col-span-3 bg-white p-4 rounded-2xl border border-olive-200 shadow-sm space-y-2">
+        <div class="text-[11px] font-bold text-olive-400 uppercase tracking-wider px-3 py-1">Danh Mục Quản Lý</div>
+        <button data-adm-tab="settings" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold text-olive-900 bg-olive-100 adm-nav-btn flex items-center gap-2">
+          <i data-lucide="sliders" class="w-4 h-4 text-olive-600"></i> Cấu Hình Shop &amp; Giao Diện
+        </button>
+        <button data-adm-tab="vietqr" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold text-olive-700 hover:bg-olive-50 adm-nav-btn flex items-center gap-2">
+          <i data-lucide="qr-code" class="w-4 h-4 text-olive-600"></i> Cấu Hình Mã VietQR
+        </button>
+        <button data-adm-tab="products" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold text-olive-700 hover:bg-olive-50 adm-nav-btn flex items-center gap-2">
+          <i data-lucide="package" class="w-4 h-4 text-olive-600"></i> Quản Lý Sản Phẩm
+        </button>
+        <button data-adm-tab="workshops" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold text-olive-700 hover:bg-olive-50 adm-nav-btn flex items-center gap-2">
+          <i data-lucide="calendar" class="w-4 h-4 text-olive-600"></i> Quản Lý Workshop
+        </button>
+        <button data-adm-tab="orders" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold text-olive-700 hover:bg-olive-50 adm-nav-btn flex items-center gap-2">
+          <i data-lucide="shopping-cart" class="w-4 h-4 text-olive-600"></i> Đơn Hàng Mới
+        </button>
+        <button data-adm-tab="bookings" class="w-full text-left px-4 py-2.5 rounded-xl text-xs font-bold text-olive-700 hover:bg-olive-50 adm-nav-btn flex items-center gap-2">
+          <i data-lucide="users" class="w-4 h-4 text-olive-600"></i> Lịch Đặt Workshop
+        </button>
+      </aside>
+
+      <!-- ADMIN TAB PANELS -->
+      <main class="lg:col-span-9 bg-white p-8 rounded-2xl border border-olive-200 shadow-sm min-h-[500px]">
+        
+        <!-- PANEL 1: SHOP & THEME SETTINGS -->
+        <div id="adm-panel-settings" class="adm-panel space-y-6">
+          <div class="border-b border-olive-100 pb-4">
+            <h3 class="font-sans text-xl font-bold text-olive-900">Cấu Hình Shop &amp; Giao Diện Website</h3>
+            <p class="text-xs text-olive-500">Tự chỉnh sửa tên shop, số Zalo, địa chỉ studio và tone màu giao diện</p>
+          </div>
+
+          <form id="adm-form-general" class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div>
+              <label class="block font-bold text-olive-800 mb-1">Tên Thương Hiệu Shop</label>
+              <input type="text" id="adm-input-shopName" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900">
+            </div>
+
+            <div>
+              <label class="block font-bold text-olive-800 mb-1">Slogan Thương Hiệu</label>
+              <input type="text" id="adm-input-slogan" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900">
+            </div>
+
+            <div>
+              <label class="block font-bold text-olive-800 mb-1">Số Hotline</label>
+              <input type="text" id="adm-input-phone" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900">
+            </div>
+
+            <div>
+              <label class="block font-bold text-olive-800 mb-1">Số Zalo Tư Vấn</label>
+              <input type="text" id="adm-input-zalo" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900">
+            </div>
+
+            <div>
+              <label class="block font-bold text-olive-800 mb-1">Link TikTok Studio</label>
+              <input type="text" id="adm-input-tiktok" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900">
+            </div>
+
+            <div>
+              <label class="block font-bold text-olive-800 mb-1">Link Facebook Fanpage</label>
+              <input type="text" id="adm-input-facebook" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900">
+            </div>
+
+            <div class="sm:col-span-2">
+              <label class="block font-bold text-olive-800 mb-1">Địa Chỉ Workshop Studio</label>
+              <input type="text" id="adm-input-address" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900">
+            </div>
+
+            <div class="sm:col-span-2 pt-4 border-t border-olive-100 flex justify-end">
+              <button type="submit" class="btn-pill-olive text-xs py-2.5 px-6">
+                Lưu Thay Đổi Thông Tin Shop
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- PANEL 2: VIETQR SETTINGS -->
+        <div id="adm-panel-vietqr" class="adm-panel hidden space-y-6">
+          <div class="border-b border-olive-100 pb-4">
+            <h3 class="font-sans text-xl font-bold text-olive-900">Cấu Hình Mã Chuyển Khoản VietQR</h3>
+            <p class="text-xs text-olive-500">Thiết lập tài khoản ngân hàng để nhận tiền mua sản phẩm &amp; cọc Workshop</p>
+          </div>
+
+          <form id="adm-form-vietqr" class="space-y-4 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block font-bold text-olive-800 mb-1">Tên Ngân Hàng (MB / Vietcombank)</label>
+                <input type="text" id="adm-input-bankName" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900">
+              </div>
+              <div>
+                <label class="block font-bold text-olive-800 mb-1">Số Tài Khoản Ngân Hàng</label>
+                <input type="text" id="adm-input-accountNumber" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900 font-mono">
+              </div>
+              <div>
+                <label class="block font-bold text-olive-800 mb-1">Tên Chủ Tài Khoản (Viết Hoa)</label>
+                <input type="text" id="adm-input-accountName" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-olive-900 font-bold">
+              </div>
+            </div>
+
+            <div class="bg-olive-50 p-4 rounded-xl border border-olive-100 text-center max-w-sm mx-auto space-y-2">
+              <span class="text-[11px] font-bold text-olive-600 uppercase tracking-wider">Xem Trước Mã VietQR Tự Động</span>
+              <div class="w-48 h-48 mx-auto bg-white rounded-lg p-2 border border-olive-200 flex items-center justify-center">
+                <img id="adm-qr-preview" src="" alt="Mã VietQR Preview" class="w-full h-full object-contain">
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-olive-100 text-right">
+              <button type="submit" class="btn-pill-olive text-xs py-2.5 px-6">
+                Lưu Cấu Hình VietQR
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- PANEL 3: PRODUCTS MANAGEMENT -->
+        <div id="adm-panel-products" class="adm-panel hidden space-y-6">
+          <div class="flex justify-between items-center border-b border-olive-100 pb-4">
+            <div>
+              <h3 class="font-sans text-xl font-bold text-olive-900">Quản Lý Danh Mục Sản Phẩm</h3>
+              <p class="text-xs text-olive-500">Thêm sản phẩm mới, chỉnh giá bán và quản lý danh mục</p>
+            </div>
+          </div>
+
+          <!-- Products Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="bg-olive-100 text-olive-800 border-b border-olive-200 font-bold">
+                  <th class="p-2.5">Ảnh</th>
+                  <th class="p-2.5">Tên sản phẩm</th>
+                  <th class="p-2.5">Danh mục</th>
+                  <th class="p-2.5">Giá tiền</th>
+                  <th class="p-2.5 text-right">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="adm-products-tbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Add New Product Form -->
+          <div class="pt-6 border-t border-olive-200 space-y-4">
+            <h4 class="font-bold text-sm text-olive-900">+ Thêm Sản Phẩm Mới Vào Shop</h4>
+            <form id="adm-form-new-product" class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <input type="text" id="new-p-name" placeholder="Tên sản phẩm mới" required class="bg-olive-50 border border-olive-200 p-2.5 rounded-lg text-olive-900">
+              <input type="number" id="new-p-price" placeholder="Giá bán (VNĐ)" required class="bg-olive-50 border border-olive-200 p-2.5 rounded-lg text-olive-900">
+              <select id="new-p-cat" class="bg-olive-50 border border-olive-200 p-2.5 rounded-lg text-olive-900">
+                <option value="resin-light">Resin Floral Light</option>
+                <option value="bridal-accessories">Phụ Kiện Cô Dâu</option>
+                <option value="keepsakes">Bảo Tồn Hoa Cưới</option>
+                <option value="diy-kit">Bộ Kit DIY</option>
+              </select>
+              <input type="text" id="new-p-desc" placeholder="Mô tả sản phẩm" class="sm:col-span-2 bg-olive-50 border border-olive-200 p-2.5 rounded-lg text-olive-900">
+              <button type="submit" class="btn-pill-olive py-2.5">Thêm Sản Phẩm</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- PANEL 4: WORKSHOPS MANAGEMENT -->
+        <div id="adm-panel-workshops" class="adm-panel hidden space-y-6">
+          <div class="border-b border-olive-100 pb-4">
+            <h3 class="font-sans text-xl font-bold text-olive-900">Quản Lý Lớp Học Workshop</h3>
+            <p class="text-xs text-olive-500">Chỉnh sửa thông tin ca học và tiền đặt cọc</p>
+          </div>
+          <div id="adm-workshops-list" class="space-y-4 text-xs"></div>
+        </div>
+
+        <!-- PANEL 5: ORDERS MANAGEMENT -->
+        <div id="adm-panel-orders" class="adm-panel hidden space-y-6">
+          <div class="flex justify-between items-center border-b border-olive-100 pb-4">
+            <div>
+              <h3 class="font-sans text-xl font-bold text-olive-900">Danh Sách Đơn Hàng Mới</h3>
+              <p class="text-xs text-olive-500">Theo dõi đơn đặt mua sản phẩm &amp; mã chuyển khoản VietQR</p>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="bg-olive-100 text-olive-800 border-b border-olive-200 font-bold">
+                  <th class="p-2.5">Mã Đơn</th>
+                  <th class="p-2.5">Thời Gian</th>
+                  <th class="p-2.5">Khách Hàng</th>
+                  <th class="p-2.5">Tổng Tiền</th>
+                  <th class="p-2.5">Trạng Thái</th>
+                </tr>
+              </thead>
+              <tbody id="adm-orders-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- PANEL 6: BOOKINGS MANAGEMENT -->
+        <div id="adm-panel-bookings" class="adm-panel hidden space-y-6">
+          <div class="flex justify-between items-center border-b border-olive-100 pb-4">
+            <div>
+              <h3 class="font-sans text-xl font-bold text-olive-900">Danh Sách Đặt Lịch Workshop</h3>
+              <p class="text-xs text-olive-500">Xem thông tin khách đăng ký ca học và tiền cọc</p>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs border-collapse">
+              <thead>
+                <tr class="bg-olive-100 text-olive-800 border-b border-olive-200 font-bold">
+                  <th class="p-2.5">Mã Lịch</th>
+                  <th class="p-2.5">Khách Đăng Ký</th>
+                  <th class="p-2.5">Tên Workshop</th>
+                  <th class="p-2.5">Ngày &amp; Ca Học</th>
+                  <th class="p-2.5">Tiền Cọc</th>
+                </tr>
+              </thead>
+              <tbody id="adm-bookings-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- ADMIN JS SCRIPT -->
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
