@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Me Rose | Handcrafted Wedding Florals & Resin Keepsakes</title>
+  <meta name="description" content="Thương hiệu hoa cưới thủ công, đèn ngủ Resin Floral Light, phụ kiện cô dâu & bảo tồn hoa cưới kỷ niệm. Đặt lịch Workshop đúc resin nghệ thuật.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            olive: {
+              50: '#F9FAF6',
+              100: '#EBEFE5',
+              200: '#C8D4B4',
+              300: '#A3B18A',
+              400: '#8A9A5B',
+              500: '#6E7E44',
+              600: '#586634',
+              700: '#3D4A21',
+              800: '#24291F',
+              900: '#191C15'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', '-apple-system', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons & Supabase SDK -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Custom Style System -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-olive-800 antialiased">
+
+  <!-- ULTRA MINIMAL HEADER (Reference Style) -->
+  <header class="sticky top-0 z-40 glass-header">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo Left -->
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-full bg-olive-100 flex items-center justify-center text-olive-600 group-hover:bg-olive-500 group-hover:text-white transition-colors">
+          <i data-lucide="flower-2" class="w-4 h-4"></i>
+        </div>
+        <span class="font-sans text-lg font-bold tracking-tight text-olive-900" id="nav-brand-name">
+          Call Me Rose
+        </span>
+      </a>
+
+      <!-- Navigation Center -->
+      <nav class="hidden md:flex items-center space-x-10 text-xs font-semibold uppercase tracking-wider text-olive-800">
+        <a href="#shop" class="hover:text-olive-500 transition-colors">Shop</a>
+        <a href="#philosophy" class="hover:text-olive-500 transition-colors">About</a>
+        <a href="#workshop" class="hover:text-olive-500 transition-colors">Workshop</a>
+        <a href="#custom-order" class="hover:text-olive-500 transition-colors">Preservation</a>
+        <a href="#blog" class="hover:text-olive-500 transition-colors">Blog</a>
+        <a href="#contact" class="hover:text-olive-500 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Buttons Right (Search, Cart & Login) -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Cart Icon Button -->
+        <button id="cart-btn" class="btn-circle-icon relative" title="Giỏ hàng">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span id="cart-badge" class="absolute -top-1 -right-1 bg-olive-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+
+        <!-- Admin / User Login Button -->
+        <button id="open-login-btn" class="btn-circle-icon" title="Đăng Nhập / Quản Lý">
+          <i data-lucide="user" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-olive-800">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION (Pure Scent Haven Inspired: Large whitespace, clean typography) -->
+  <section class="hero-minimal-bg min-h-[580px] flex items-center justify-center text-center px-4 py-24 relative">
+    <div class="hero-overlay absolute inset-0"></div>
+    
+    <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+      
+      <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-olive-900 tracking-tight leading-tight">
+        Lưu Giữ Kỷ Niệm Trong Mỗi Cánh Hoa
+      </h1>
+
+      <p class="text-olive-700 text-base sm:text-lg max-w-xl mx-auto font-normal leading-relaxed">
+        Đèn ngủ Resin Floral Light &amp; phụ kiện hoa cưới thủ công tinh tế dành riêng cho hành trình hạnh phúc của bạn.
+      </p>
+
+      <div class="pt-4">
+        <a href="#shop" class="btn-pill-olive">
+          Khám Phá Bộ Sưu Tập
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3 FEATURE PILLARS SECTION (Direct 1:1 match with Pure Scent Haven reference icons) -->
+  <section class="py-20 bg-white border-b border-olive-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        
+        <!-- Pillar 1 -->
+        <div class="space-y-3 px-4">
+          <div class="feature-badge-icon">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-sans text-base font-bold text-olive-900">Hoa Thật 100%</h3>
+          <p class="text-xs text-olive-600 leading-relaxed">
+            Từng cánh hoa sấy khô thăng hoa giữ trọn sắc màu nguyên bản tự nhiên.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="space-y-3 px-4">
+          <div class="feature-badge-icon">
+            <i data-lucide="sun" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-sans text-base font-bold text-olive-900">Đèn Resin Cao Cấp</h3>
+          <p class="text-xs text-olive-600 leading-relaxed">
+            Thiết kế tối giản cho không gian phòng ngủ &amp; tiệc cưới hiện đại, bảo hành 10 năm.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="space-y-3 px-4">
+          <div class="feature-badge-icon">
+            <i data-lucide="heart" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-sans text-base font-bold text-olive-900">Kỷ Vật Độc Bản</h3>
+          <p class="text-xs text-olive-600 leading-relaxed">
+            Chế tác thủ công riêng biệt theo yêu cầu từng cô dâu và bó hoa cưới trao tay.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PHILOSOPHY SECTION (Direct Match with Reference) -->
+  <section id="philosophy" class="py-24 bg-white text-center">
+    <div class="max-w-3xl mx-auto px-6 space-y-6">
+      
+      <h2 class="font-sans text-3xl sm:text-4xl font-bold text-olive-900 tracking-tight">
+        Triết Lý Của Call Me Rose
+      </h2>
+
+      <p class="text-olive-700 text-sm sm:text-base leading-relaxed font-normal">
+        Tại Call Me Rose, chúng tôi tin rằng mỗi bó hoa cưới mang theo những lời hứa sâu sắc nhất của ngày chung đôi. Các tác phẩm resin thủ công được tạo ra để kết nối cảm xúc, biến khoảnh khắc thoáng qua trong ngày cưới thành kỷ vật trường tồn cùng năm tháng. Mỗi chiếc đèn resin là sự kết hợp giữa nét tinh khôi tự nhiên và khoảng không gian tĩnh lặng, mang lại sự bình yên trong chính ngôi nhà của bạn.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- PRODUCTS CATALOG SECTION -->
+  <section id="shop" class="py-20 bg-olive-50 border-t border-olive-100">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Bộ Sưu Tập</span>
+        <h2 class="font-sans text-3xl font-bold text-olive-900">Sản Phẩm Thủ Công</h2>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12" id="category-filters">
+        <button data-cat="all" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-olive-500 text-white shadow-sm filter-btn">Tất Cả</button>
+        <button data-cat="resin-light" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn">Resin Floral Light</button>
+        <button data-cat="bridal-accessories" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn">Phụ Kiện Cô Dâu</button>
+        <button data-cat="keepsakes" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn">Bảo Tồn Hoa Cưới</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="products-grid">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKSHOP BOOKING SECTION -->
+  <section id="workshop" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Lớp Học Trải Nghiệm</span>
+        <h2 class="font-sans text-3xl font-bold text-olive-900">Đặt Lịch Workshop</h2>
+        <p class="text-xs text-olive-600">Tự tay đúc đèn ngủ resin hoa cưới trong không gian workshop yên bình</p>
+      </div>
+
+      <div class="space-y-6 max-w-4xl mx-auto" id="workshop-list">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUQUET PRESERVATION REQUEST SECTION -->
+  <section id="custom-order" class="py-20 bg-olive-50 border-t border-olive-100">
+    <div class="max-w-3xl mx-auto px-6 text-center space-y-8">
+      <div class="space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Dịch Vụ Khác</span>
+        <h2 class="font-sans text-3xl font-bold text-olive-900">Bảo Tồn Bó Hoa Cưới Của Bạn</h2>
+        <p class="text-xs text-olive-600 max-w-lg mx-auto">
+          Gửi bó hoa tươi sau lễ cưới cho Call Me Rose để chế tác thành tác phẩm đèn resin nghệ thuật lưu giữ kỷ niệm.
+        </p>
+      </div>
+
+      <form id="custom-order-form" class="bg-white p-8 rounded-2xl border border-olive-100 text-left grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-xs font-semibold text-olive-800 mb-1">Họ và tên</label>
+          <input type="text" id="cust-name" required placeholder="Họ và tên cô dâu / chú rể" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-olive-800 mb-1">Số Zalo liên hệ</label>
+          <input type="tel" id="cust-phone" required placeholder="0901 234 567" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-olive-800 mb-1">Ngày cưới</label>
+          <input type="date" id="cust-date" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-olive-800 mb-1">Kiểu dáng muốn đúc</label>
+          <select id="cust-type" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+            <option value="Đèn Resin Floral Light Đế Gỗ">Đèn Resin Floral Light Đế Gỗ</option>
+            <option value="Khối Resin Kỷ Vật Trái Tim">Khối Resin Kỷ Vật Trái Tim</option>
+            <option value="Phụ Kiện Cài Tóc & Trang Sức">Phụ Kiện Cài Tóc &amp; Trang Sức</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-xs font-semibold text-olive-800 mb-1">Ghi chú (Tên khắc, loại hoa)</label>
+          <textarea id="cust-notes" rows="3" placeholder="Ghi chú thêm thông tin cho Call Me Rose..." class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500"></textarea>
+        </div>
+        <div class="sm:col-span-2 text-center pt-2">
+          <button type="submit" class="btn-pill-olive">
+            Gửi Yêu Cầu Bảo Tồn
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- BLOG / STORIES SECTION -->
+  <section id="blog" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
+        <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Journal</span>
+        <h2 class="font-sans text-3xl font-bold text-olive-900">Stories &amp; Blog</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="blog-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="bg-olive-900 text-olive-100 py-16 border-t border-olive-800">
+    <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
+      <div class="space-y-2">
+        <h3 class="font-sans text-2xl font-bold text-white">Call Me Rose</h3>
+        <p class="text-xs text-olive-300 max-w-md mx-auto" id="footer-slogan">
+          Handcrafted Wedding Florals &amp; Resin Keepsakes.
+        </p>
+      </div>
+
+      <div class="flex justify-center gap-6 text-xs text-olive-300">
+        <span>Hotline/Zalo: <strong id="footer-phone" class="text-white">0987 654 321</strong></span>
+        <span>Địa chỉ: <strong id="footer-address" class="text-white">28 Ngõ Tràng Tiền, Hà Nội</strong></span>
+      </div>
+
+      <div class="flex justify-center gap-4">
+        <a id="footer-tiktok" href="#" target="_blank" class="w-8 h-8 rounded-full bg-olive-800 flex items-center justify-center text-white hover:bg-olive-700">
+          <i data-lucide="video" class="w-4 h-4"></i>
+        </a>
+        <a id="footer-facebook" href="#" target="_blank" class="w-8 h-8 rounded-full bg-olive-800 flex items-center justify-center text-white hover:bg-olive-700">
+          <i data-lucide="facebook" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <p class="text-[11px] text-olive-500 pt-6 border-t border-olive-800">
+        © 2026 Call Me Rose Studio. Minimalist Handcrafted Wedding Art.
+      </p>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+
+  <!-- 1. MINIMALIST LOGIN SCREEN / MODAL (Ultra Airy, Space & Minimal) -->
+  <div id="login-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0" id="close-login-backdrop"></div>
+    <div class="relative max-w-md w-full login-modal-box z-10 text-center animate-slide-up">
+      <button id="close-login-btn" class="absolute top-5 right-5 text-olive-400 hover:text-olive-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="w-12 h-12 rounded-full bg-olive-50 text-olive-600 mx-auto mb-6 flex items-center justify-center">
+        <i data-lucide="flower-2" class="w-6 h-6"></i>
+      </div>
+
+      <h3 class="font-sans text-2xl font-bold text-olive-900 tracking-tight">Đăng Nhập Quản Lý</h3>
+      <p class="text-xs text-olive-500 mt-1 mb-8 font-normal">Dành cho chủ shop Call Me Rose</p>
+
+      <form id="login-form" class="space-y-5 text-left">
+        <div>
+          <label class="block text-xs font-semibold text-olive-700 mb-1">Tên đăng nhập / Email</label>
+          <input type="text" required id="login-user" placeholder="admin@callmerose.com" value="admin" class="w-full bg-olive-50 border border-olive-200 rounded-full py-3 px-5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-olive-700 mb-1">Mật khẩu</label>
+          <input type="password" required id="login-pass" placeholder="••••••••" value="123456" class="w-full bg-olive-50 border border-olive-200 rounded-full py-3 px-5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full btn-pill-olive">
+            Vào Trang Quản Lý
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+    <div class="modal-backdrop absolute inset-0" id="close-cart-backdrop"></div>
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+        
+        <div class="p-6 border-b border-olive-100 flex items-center justify-between">
+          <h3 class="font-sans text-lg font-bold text-olive-900">Giỏ Hàng</h3>
+          <button id="close-cart-btn" class="text-olive-400 hover:text-olive-800">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-6 space-y-4" id="cart-items-container">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="p-6 bg-olive-50 border-t border-olive-100 space-y-4">
+          <div class="flex justify-between items-center text-sm font-semibold text-olive-900">
+            <span>Tổng cộng:</span>
+            <span id="cart-total-price" class="text-base text-olive-600 font-bold">0đ</span>
+          </div>
+
+          <button id="checkout-btn" class="w-full btn-pill-olive">
+            Thanh Toán Mã VietQR
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. PRODUCT DETAIL MODAL -->
+  <div id="product-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0" id="close-product-backdrop"></div>
+    <div class="relative bg-white rounded-3xl max-w-2xl w-full p-8 shadow-2xl z-10 animate-slide-up border border-olive-100 max-h-[90vh] overflow-y-auto">
+      <button id="close-product-btn" class="absolute top-5 right-5 text-olive-400 hover:text-olive-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="product-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- 4. WORKSHOP BOOKING WIZARD MODAL -->
+  <div id="workshop-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0" id="close-ws-backdrop"></div>
+    <div class="relative bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl z-10 animate-slide-up border border-olive-100 max-h-[90vh] overflow-y-auto">
+      <button id="close-ws-btn" class="absolute top-5 right-5 text-olive-400 hover:text-olive-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="workshop-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- 5. VIETQR PAYMENT MODAL -->
+  <div id="qr-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0" id="close-qr-backdrop"></div>
+    <div class="relative bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl z-10 text-center animate-slide-up border border-olive-100">
+      <button id="close-qr-btn" class="absolute top-5 right-5 text-olive-400 hover:text-olive-800">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div id="qr-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- 6. NO-CODE ADMIN CMS MODAL -->
+  <div id="admin-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0" id="close-admin-backdrop"></div>
+    <div class="relative bg-white rounded-3xl max-w-4xl w-full p-8 shadow-2xl z-10 animate-slide-up border border-olive-200 max-h-[90vh] overflow-y-auto">
+      
+      <div class="flex items-center justify-between border-b border-olive-100 pb-4 mb-6">
+        <div>
+          <h3 class="font-sans text-xl font-bold text-olive-900">Bảng Quản Lý Shop (No-Code CMS)</h3>
+          <p class="text-xs text-olive-500">Chủ shop Call Me Rose tuỳ biến thông tin &amp; quản lý đơn hàng</p>
+        </div>
+        <button id="close-admin-btn" class="text-olive-400 hover:text-olive-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Admin Tabs -->
+      <div class="flex border-b border-olive-100 gap-4 mb-6 text-xs font-semibold">
+        <button id="admin-tab-settings" class="py-2 px-4 border-b-2 border-olive-600 text-olive-900 font-bold admin-tab-btn">Thông Tin Shop &amp; QR</button>
+        <button id="admin-tab-products" class="py-2 px-4 border-b-2 border-transparent text-olive-500 hover:text-olive-900 admin-tab-btn">Sản Phẩm</button>
+        <button id="admin-tab-orders" class="py-2 px-4 border-b-2 border-transparent text-olive-500 hover:text-olive-900 admin-tab-btn">Đơn Hàng Mới</button>
+        <button id="admin-tab-bookings" class="py-2 px-4 border-b-2 border-transparent text-olive-500 hover:text-olive-900 admin-tab-btn">Lịch Workshop</button>
+      </div>
+
+      <div id="admin-tab-content"></div>
+    </div>
+  </div>
+
+  <!-- FLOATING CONTACT ZALO BUTTON -->
+  <div class="fixed bottom-6 right-6 z-30">
+    <button id="floating-zalo-btn" class="w-12 h-12 rounded-full bg-olive-600 hover:bg-olive-700 text-white shadow-xl flex items-center justify-center transition-transform hover:scale-105" title="Nhắn Zalo Tư Vấn">
+      <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <!-- JS APP CONTROLLER & SUPABASE MCP INTEGRATION -->
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

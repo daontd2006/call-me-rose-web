@@ -1,0 +1,168 @@
+/* CALL ME ROSE - Pure & Minimalist Light Olive Design System */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-olive-dark: #1E2916;
+  --color-olive-deep: #2D3E1E;
+  --color-olive-primary: #6E7E44;
+  --color-olive-medium: #8A9A5B;
+  --color-olive-sage: #B5C29C;
+  --color-olive-light: #EBEFE5;
+  --color-bg-pure: #FFFFFF;
+  --color-bg-soft: #F9FAF6;
+  --color-bg-card: #FFFFFF;
+  --color-text-main: #24291F;
+  --color-text-sub: #5C6355;
+  --font-heading: 'Plus Jakarta Sans', 'Cormorant Garamond', sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--color-bg-pure);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* Header Aesthetics - Ultra Clean */
+.glass-header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(235, 239, 229, 0.8);
+}
+
+/* Minimal Hero Container */
+.hero-minimal-bg {
+  position: relative;
+  background-color: #F6F8F2;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(181, 194, 156, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(110, 126, 68, 0.15) 0%, transparent 50%),
+    url('../assets/workshop_banner.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  background: rgba(249, 250, 246, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+/* Feature Circle Icon Badges */
+.feature-badge-icon {
+  width: 56 h;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #EBEFE5;
+  color: #5C6B32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto;
+  transition: all 0.3s ease;
+}
+
+.feature-badge-icon:hover {
+  background: #6E7E44;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Clean Cards */
+.clean-card {
+  background: #FFFFFF;
+  border: 1px solid #EBEFE5;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.clean-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -12px rgba(30, 41, 22, 0.08);
+  border-color: #C8D4B4;
+}
+
+/* Custom Minimalist Pill Button */
+.btn-pill-olive {
+  background-color: #6E7E44;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(110, 126, 68, 0.2);
+}
+
+.btn-pill-olive:hover {
+  background-color: #586634;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(110, 126, 68, 0.3);
+}
+
+.btn-circle-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #EBEFE5;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #24291F;
+  transition: all 0.2s ease;
+}
+
+.btn-circle-icon:hover {
+  border-color: #6E7E44;
+  color: #6E7E44;
+  background: #F9FAF6;
+}
+
+/* Minimalist Login Modal Styling */
+.login-modal-box {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 48px 40px;
+  box-shadow: 0 24px 60px -12px rgba(30, 41, 22, 0.15);
+  border: 1px solid #EBEFE5;
+}
+
+/* Modal Overlay & Slide Drawers */
+.modal-backdrop {
+  background: rgba(30, 41, 22, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F9FAF6;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8D4B4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6E7E44;
+}
