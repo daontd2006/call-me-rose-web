@@ -454,6 +454,29 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('close-qr-btn').onclick = closeVietQRModal;
   document.getElementById('close-qr-backdrop').onclick = closeVietQRModal;
 
+  // --- MOBILE MENU DRAWER CONTROLLER ---
+  const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
+  const closeMobileMenuBackdrop = document.getElementById('close-mobile-menu-backdrop');
+
+  if (mobileMenuBtn && mobileMenuDrawer) {
+    mobileMenuBtn.onclick = () => {
+      mobileMenuDrawer.classList.remove('hidden');
+    };
+
+    const closeMobileMenu = () => {
+      mobileMenuDrawer.classList.add('hidden');
+    };
+
+    if (closeMobileMenuBtn) closeMobileMenuBtn.onclick = closeMobileMenu;
+    if (closeMobileMenuBackdrop) closeMobileMenuBackdrop.onclick = closeMobileMenu;
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
+
   // --- BLOG MODAL ---
   function openBlogModal(blog) {
     const modal = document.getElementById('product-modal');

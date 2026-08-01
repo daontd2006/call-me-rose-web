@@ -99,16 +99,16 @@
         extend: {
           colors: {
             olive: {
-              50: '#F9FAF6',
-              100: '#EBEFE5',
-              200: '#C8D4B4',
-              300: '#A3B18A',
-              400: '#8A9A5B',
-              500: '#6E7E44',
-              600: '#586634',
-              700: '#3D4A21',
-              800: '#24291F',
-              900: '#191C15'
+              50: '#FAF8F5',
+              100: '#F4EFE6',
+              200: '#E7DDD0',
+              300: '#D1C2B0',
+              400: '#A89985',
+              500: '#5C6447',
+              600: '#485036',
+              700: '#353C27',
+              800: '#232819',
+              900: '#1C1917'
             }
           },
           fontFamily: {
@@ -127,45 +127,71 @@
   <!-- Custom Style System -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-white text-olive-800 antialiased">
+<body class="bg-[#FAF8F5] text-olive-900 antialiased">
 
-  <!-- ULTRA MINIMAL HEADER -->
-  <header class="sticky top-0 z-50 bg-white glass-header" role="banner">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+  <!-- VIVI EMBELLISH & KINDA FEEL STYLE DUAL-LANGUAGE HEADER -->
+  <header class="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#E7DDD0]/70 glass-header" role="banner">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
       
       <!-- Brand Logo Left -->
-      <a href="#" class="flex items-center gap-2 group" aria-label="Trang chủ Call Me Rose">
-        <div class="w-8 h-8 rounded-full bg-olive-100 flex items-center justify-center text-olive-600 group-hover:bg-olive-500 group-hover:text-white transition-colors">
-          <i data-lucide="flower-2" class="w-4 h-4"></i>
+      <a href="#" class="flex items-center gap-3 group" aria-label="Trang chủ Call Me Rose">
+        <div class="w-9 h-9 rounded-full bg-olive-100 flex items-center justify-center text-olive-600 group-hover:bg-olive-500 group-hover:text-white transition-colors duration-300">
+          <i data-lucide="flower-2" class="w-5 h-5"></i>
         </div>
-        <span class="font-sans text-lg font-bold tracking-tight text-olive-900" id="nav-brand-name">
-          Call Me Rose
-        </span>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl font-bold tracking-tight text-olive-900 group-hover:text-olive-500 transition-colors" id="nav-brand-name">
+            Call Me Rose
+          </span>
+          <span class="text-[9px] uppercase tracking-widest text-olive-400 font-semibold">Bridal Florals &amp; Keepsakes</span>
+        </div>
       </a>
 
-      <!-- Navigation Center -->
-      <nav class="hidden md:flex items-center space-x-10 text-xs font-semibold uppercase tracking-wider text-olive-800" role="navigation" aria-label="Menu chính">
-        <a href="#shop" class="hover:text-olive-500 transition-colors">Shop</a>
-        <a href="#philosophy" class="hover:text-olive-500 transition-colors">About</a>
-        <a href="#workshop" class="hover:text-olive-500 transition-colors">Workshop</a>
-        <a href="#custom-order" class="hover:text-olive-500 transition-colors">Preservation</a>
-        <a href="#blog" class="hover:text-olive-500 transition-colors">Blog</a>
-        <a href="#contact" class="hover:text-olive-500 transition-colors">Contact</a>
+      <!-- Bilingual Navigation Center (Kinda Feel Style) -->
+      <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Menu chính">
+        <a href="#shop" class="nav-bilingual-item group">
+          <span class="nav-bilingual-en">SHOP</span>
+          <span class="nav-bilingual-vi">Cửa Hàng</span>
+        </a>
+
+        <a href="#philosophy" class="nav-bilingual-item group">
+          <span class="nav-bilingual-en">ABOUT</span>
+          <span class="nav-bilingual-vi">Về Chúng Tôi</span>
+        </a>
+
+        <a href="#workshop" class="nav-bilingual-item group">
+          <span class="nav-bilingual-en">WORKSHOP</span>
+          <span class="nav-bilingual-vi">Lớp Học</span>
+        </a>
+
+        <a href="#custom-order" class="nav-bilingual-item group">
+          <span class="nav-bilingual-en">PRESERVATION</span>
+          <span class="nav-bilingual-vi">Bảo Tồn Hoa</span>
+        </a>
+
+        <a href="#blog" class="nav-bilingual-item group">
+          <span class="nav-bilingual-en">JOURNAL</span>
+          <span class="nav-bilingual-vi">Bài Viết</span>
+        </a>
+
+        <a href="#contact" class="nav-bilingual-item group">
+          <span class="nav-bilingual-en">CONTACT</span>
+          <span class="nav-bilingual-vi">Liên Hệ</span>
+        </a>
       </nav>
 
       <!-- Action Buttons Right -->
       <div class="flex items-center gap-3">
         <button id="cart-btn" class="btn-circle-icon relative" title="Giỏ hàng" aria-label="Xem giỏ hàng">
           <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-          <span id="cart-badge" class="absolute -top-1 -right-1 bg-olive-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+          <span id="cart-badge" class="absolute -top-1 -right-1 bg-olive-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">0</span>
         </button>
 
         <a href="admin.html" class="btn-circle-icon" title="Trang Quản Lý Admin" aria-label="Mở trang quản lý admin">
           <i data-lucide="user" class="w-4 h-4"></i>
         </a>
 
-        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-olive-800" aria-label="Mở menu di động">
-          <i data-lucide="menu" class="w-5 h-5"></i>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-olive-900 hover:bg-olive-100 transition-colors" aria-label="Mở menu di động">
+          <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
 
@@ -175,23 +201,30 @@
   <!-- MAIN CONTENT CONTAINER -->
   <main id="main-content" role="main">
 
-    <!-- HERO SECTION -->
-    <section class="hero-minimal-bg min-h-[580px] flex items-center justify-center text-center px-4 py-24 relative">
+    <!-- HERO SECTION (Vivi Embellish Luxury Aesthetic) -->
+    <section class="hero-minimal-bg min-h-[620px] flex items-center justify-center text-center px-4 py-28 relative overflow-hidden">
       <div class="hero-overlay absolute inset-0"></div>
       
       <div class="relative z-10 max-w-3xl mx-auto space-y-6">
         
-        <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-olive-900 tracking-tight leading-tight">
-          Lưu Giữ Kỷ Niệm Trong Mỗi Cánh Hoa
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-olive-600 bg-olive-100/80 px-4 py-1.5 rounded-full border border-olive-200/60">
+          Handcrafted Floral Preservation &amp; Keepsakes
+        </span>
+
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-olive-900 tracking-tight leading-[1.15]">
+          Lưu Giữ Kỷ Niệm Trong <span class="italic font-serif font-light text-olive-600">Mỗi Cánh Hoa</span>
         </h1>
 
         <p class="text-olive-700 text-base sm:text-lg max-w-xl mx-auto font-normal leading-relaxed">
           Đèn ngủ Resin Floral Light &amp; phụ kiện hoa cưới thủ công tinh tế dành riêng cho hành trình hạnh phúc của bạn.
         </p>
 
-        <div class="pt-4">
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#shop" class="btn-pill-olive" title="Khám phá bộ sưu tập hoa cưới resin">
             Khám Phá Bộ Sưu Tập
+          </a>
+          <a href="#workshop" class="btn-outline-luxury" title="Đặt lịch Workshop">
+            Đặt Lịch Workshop
           </a>
         </div>
 
@@ -384,6 +417,64 @@
   </footer>
 
   <!-- MODALS -->
+
+  <!-- 0. BILINGUAL MOBILE NAVIGATION DRAWER -->
+  <div id="mobile-menu-drawer" class="fixed inset-0 z-50 hidden">
+    <div class="modal-backdrop absolute inset-0" id="close-mobile-menu-backdrop"></div>
+    <div class="absolute inset-y-0 left-0 max-w-full flex pr-10">
+      <div class="w-screen max-w-xs bg-[#FAF8F5] shadow-2xl flex flex-col justify-between p-6 border-r border-[#E7DDD0] animate-slide-right">
+        
+        <div>
+          <div class="flex items-center justify-between pb-6 border-b border-olive-100 mb-8">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 rounded-full bg-olive-100 flex items-center justify-center text-olive-600">
+                <i data-lucide="flower-2" class="w-4 h-4"></i>
+              </div>
+              <span class="font-serif text-lg font-bold text-olive-900">Call Me Rose</span>
+            </div>
+            <button id="close-mobile-menu-btn" class="p-2 text-olive-400 hover:text-olive-900" aria-label="Đóng menu di động">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <nav class="flex flex-col space-y-4" role="navigation">
+            <a href="#shop" class="mobile-nav-link group flex justify-between items-baseline py-2.5 border-b border-olive-100/60">
+              <span class="font-serif text-base font-semibold tracking-widest text-olive-900 group-hover:text-olive-500">SHOP</span>
+              <span class="text-xs text-olive-400 font-medium">Cửa Hàng</span>
+            </a>
+            <a href="#philosophy" class="mobile-nav-link group flex justify-between items-baseline py-2.5 border-b border-olive-100/60">
+              <span class="font-serif text-base font-semibold tracking-widest text-olive-900 group-hover:text-olive-500">ABOUT</span>
+              <span class="text-xs text-olive-400 font-medium">Về Chúng Tôi</span>
+            </a>
+            <a href="#workshop" class="mobile-nav-link group flex justify-between items-baseline py-2.5 border-b border-olive-100/60">
+              <span class="font-serif text-base font-semibold tracking-widest text-olive-900 group-hover:text-olive-500">WORKSHOP</span>
+              <span class="text-xs text-olive-400 font-medium">Lớp Học</span>
+            </a>
+            <a href="#custom-order" class="mobile-nav-link group flex justify-between items-baseline py-2.5 border-b border-olive-100/60">
+              <span class="font-serif text-base font-semibold tracking-widest text-olive-900 group-hover:text-olive-500">PRESERVATION</span>
+              <span class="text-xs text-olive-400 font-medium">Bảo Tồn Hoa</span>
+            </a>
+            <a href="#blog" class="mobile-nav-link group flex justify-between items-baseline py-2.5 border-b border-olive-100/60">
+              <span class="font-serif text-base font-semibold tracking-widest text-olive-900 group-hover:text-olive-500">JOURNAL</span>
+              <span class="text-xs text-olive-400 font-medium">Bài Viết</span>
+            </a>
+            <a href="#contact" class="mobile-nav-link group flex justify-between items-baseline py-2.5 border-b border-olive-100/60">
+              <span class="font-serif text-base font-semibold tracking-widest text-olive-900 group-hover:text-olive-500">CONTACT</span>
+              <span class="text-xs text-olive-400 font-medium">Liên Hệ</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="pt-6 border-t border-olive-100 text-center space-y-3">
+          <p class="text-[11px] text-olive-500">Handcrafted Wedding Florals &amp; Keepsakes</p>
+          <a href="admin.html" class="inline-flex items-center gap-2 text-xs font-semibold text-olive-700 hover:text-olive-900">
+            <i data-lucide="user" class="w-3.5 h-3.5"></i> Quản Lý Shop
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- 1. MINIMALIST LOGIN SCREEN / MODAL -->
   <div id="login-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
