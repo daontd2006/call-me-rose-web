@@ -1,0 +1,8 @@
+# Robots.txt for Call Me Rose Handcrafted Wedding Florals
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Host and Sitemap
+Host: https://call-me-rose-web-daontd2006-1717s-projects.vercel.app
+Sitemap: https://call-me-rose-web-daontd2006-1717s-projects.vercel.app/sitemap.xml
