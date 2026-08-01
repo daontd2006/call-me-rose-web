@@ -148,10 +148,61 @@
 
       <!-- Bilingual Navigation Center (Kinda Feel Style) -->
       <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Menu chính">
-        <a href="#shop" class="nav-bilingual-item group">
-          <span class="nav-bilingual-en">SHOP</span>
-          <span class="nav-bilingual-vi">Cửa Hàng</span>
-        </a>
+        <!-- SHOP DROPDOWN MENU -->
+        <div class="relative group">
+          <a href="#shop" class="nav-bilingual-item flex items-center gap-1.5 py-2">
+            <div>
+              <span class="nav-bilingual-en">SHOP</span>
+              <span class="nav-bilingual-vi">Cửa Hàng</span>
+            </div>
+            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-olive-400 group-hover:text-olive-600 transition-transform duration-200 group-hover:rotate-180"></i>
+          </a>
+
+          <!-- Luxury Dropdown Panel -->
+          <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 min-w-[260px]">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-olive-200/80 p-3 space-y-1">
+              
+              <a href="#shop" data-cat-select="muguet-de-mai" class="shop-dropdown-item flex items-center justify-between p-2.5 rounded-xl hover:bg-olive-50 transition-colors group/item">
+                <div>
+                  <div class="font-serif text-sm font-semibold text-olive-900 group-hover/item:text-olive-600">Muguet de mai</div>
+                  <div class="text-[10.5px] text-olive-500">Bó hoa cưới linh lan đất sét Nhật</div>
+                </div>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-olive-300 group-hover/item:text-olive-600 group-hover/item:translate-x-0.5 transition-all"></i>
+              </a>
+
+              <a href="#shop" data-cat-select="bridal-headpieces" class="shop-dropdown-item flex items-center justify-between p-2.5 rounded-xl hover:bg-olive-50 transition-colors group/item">
+                <div>
+                  <div class="font-serif text-sm font-semibold text-olive-900 group-hover/item:text-olive-600">Bridal - Headpieces</div>
+                  <div class="text-[10.5px] text-olive-500">Bờm &amp; phụ kiện cài tóc đất sét</div>
+                </div>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-olive-300 group-hover/item:text-olive-600 group-hover/item:translate-x-0.5 transition-all"></i>
+              </a>
+
+              <a href="#shop" data-cat-select="accessories" class="shop-dropdown-item flex items-center justify-between p-2.5 rounded-xl hover:bg-olive-50 transition-colors group/item">
+                <div>
+                  <div class="font-serif text-sm font-semibold text-olive-900 group-hover/item:text-olive-600">Accessories</div>
+                  <div class="text-[10.5px] text-olive-500">Hoa tai &amp; trang sức cô dâu</div>
+                </div>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-olive-300 group-hover/item:text-olive-600 group-hover/item:translate-x-0.5 transition-all"></i>
+              </a>
+
+              <a href="#shop" data-cat-select="preservation" class="shop-dropdown-item flex items-center justify-between p-2.5 rounded-xl hover:bg-olive-50 transition-colors group/item">
+                <div>
+                  <div class="font-serif text-sm font-semibold text-olive-900 group-hover/item:text-olive-600">Preservation</div>
+                  <div class="text-[10.5px] text-olive-500">Bảo tồn hoa cưới Resin kỷ niệm</div>
+                </div>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-olive-300 group-hover/item:text-olive-600 group-hover/item:translate-x-0.5 transition-all"></i>
+              </a>
+
+              <div class="border-t border-olive-100 pt-1.5 mt-1">
+                <a href="#shop" data-cat-select="all" class="shop-dropdown-item block text-center p-2 rounded-xl text-xs font-semibold text-olive-600 hover:bg-olive-100/70 transition-colors">
+                  Xem Tất Cả Sản Phẩm &rarr;
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
 
         <a href="#philosophy" class="nav-bilingual-item group">
           <span class="nav-bilingual-en">ABOUT</span>
@@ -318,10 +369,10 @@
         <!-- Filter Tabs -->
         <div class="flex flex-wrap justify-center gap-3 mb-12" id="category-filters" role="tablist">
           <button data-cat="all" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-olive-500 text-white shadow-sm filter-btn" role="tab">Tất Cả</button>
-          <button data-cat="clay-lily" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Hoa Linh Lan Đất Sét</button>
-          <button data-cat="bridal-headpieces" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Phụ Kiện Cài Tóc</button>
-          <button data-cat="bridal-jewelry" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Trang Sức Hoa Cưới</button>
-          <button data-cat="preservation" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Bảo Tồn Hoa Cưới</button>
+          <button data-cat="muguet-de-mai" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Muguet de mai</button>
+          <button data-cat="bridal-headpieces" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Bridal - Headpieces</button>
+          <button data-cat="accessories" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Accessories</button>
+          <button data-cat="preservation" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Preservation</button>
         </div>
 
         <!-- Product Grid -->
@@ -460,10 +511,18 @@
           </div>
 
           <nav class="flex flex-col space-y-4" role="navigation">
-            <a href="#shop" class="mobile-nav-link group flex justify-between items-baseline py-2.5 border-b border-olive-100/60">
-              <span class="font-serif text-base font-semibold tracking-widest text-olive-900 group-hover:text-olive-500">SHOP</span>
-              <span class="text-xs text-olive-400 font-medium">Cửa Hàng</span>
-            </a>
+            <div class="space-y-1">
+              <a href="#shop" class="mobile-nav-link group flex justify-between items-baseline py-2 border-b border-olive-100/60">
+                <span class="font-serif text-base font-semibold tracking-widest text-olive-900 group-hover:text-olive-500">SHOP</span>
+                <span class="text-xs text-olive-400 font-medium">Cửa Hàng</span>
+              </a>
+              <div class="pl-3 space-y-1.5 pt-1 pb-2 border-b border-olive-100/40 text-xs">
+                <a href="#shop" data-cat-select="muguet-de-mai" class="mobile-nav-link block text-olive-700 hover:text-olive-500 font-medium py-1">✦ Muguet de mai (Hoa linh lan)</a>
+                <a href="#shop" data-cat-select="bridal-headpieces" class="mobile-nav-link block text-olive-700 hover:text-olive-500 font-medium py-1">✦ Bridal - Headpieces (Bờm &amp; cài tóc)</a>
+                <a href="#shop" data-cat-select="accessories" class="mobile-nav-link block text-olive-700 hover:text-olive-500 font-medium py-1">✦ Accessories (Phụ kiện cô dâu)</a>
+                <a href="#shop" data-cat-select="preservation" class="mobile-nav-link block text-olive-700 hover:text-olive-500 font-medium py-1">✦ Preservation (Bảo tồn hoa Resin)</a>
+              </div>
+            </div>
             <a href="#philosophy" class="mobile-nav-link group flex justify-between items-baseline py-2.5 border-b border-olive-100/60">
               <span class="font-serif text-base font-semibold tracking-widest text-olive-900 group-hover:text-olive-500">ABOUT</span>
               <span class="text-xs text-olive-400 font-medium">Về Chúng Tôi</span>

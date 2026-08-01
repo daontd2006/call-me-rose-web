@@ -23,7 +23,7 @@ const DEFAULT_SHOP_DATA = {
     {
       id: "prod-1",
       name: "Bó Hoa Cưới Linh Lan Đất Sét Nhật Bản (Clay Lily Bouquet)",
-      category: "clay-lily",
+      category: "muguet-de-mai",
       price: 1850000,
       originalPrice: 2200000,
       image: "assets/clay_lily_bouquet.png",
@@ -60,7 +60,7 @@ const DEFAULT_SHOP_DATA = {
     {
       id: "prod-3",
       name: "Hoa Tai Cô Dâu Dáng Nhành Linh Lan Đất Sét (Clay Lily Earrings)",
-      category: "bridal-jewelry",
+      category: "accessories",
       price: 480000,
       originalPrice: 580000,
       image: "assets/bridal_hair_accessory.png",

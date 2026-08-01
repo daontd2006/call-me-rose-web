@@ -52,13 +52,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const priceFormatted = new Intl.NumberFormat('vi-VN').format(p.price) + 'đ';
 
+      const catNames = {
+        'muguet-de-mai': 'Muguet de mai',
+        'clay-lily': 'Muguet de mai',
+        'bridal-headpieces': 'Bridal - Headpieces',
+        'accessories': 'Accessories',
+        'bridal-jewelry': 'Accessories',
+        'preservation': 'Preservation'
+      };
+      const catDisplay = catNames[p.category] || p.category;
+
       card.innerHTML = `
         <div>
           <div class="relative overflow-hidden h-56 rounded-xl bg-olive-50 mb-4">
             <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           </div>
           <div class="space-y-1">
-            <div class="text-[11px] text-olive-400 font-semibold uppercase tracking-wider">${p.category}</div>
+            <div class="text-[11px] text-olive-400 font-semibold uppercase tracking-wider">${catDisplay}</div>
             <h3 class="font-sans text-sm font-bold text-olive-900 group-hover:text-olive-500 transition-colors line-clamp-1">${p.name}</h3>
             <p class="text-xs text-olive-500 line-clamp-2">${p.description}</p>
           </div>
@@ -147,6 +157,29 @@ document.addEventListener('DOMContentLoaded', () => {
       activeCategory = btn.dataset.cat;
       renderProducts();
     };
+  });
+
+  // --- DROPDOWN CATEGORY NAVIGATION HANDLER ---
+  document.querySelectorAll('[data-cat-select]').forEach(link => {
+    link.addEventListener('click', () => {
+      const targetCat = link.dataset.catSelect;
+      
+      const filterBtns = document.querySelectorAll('#category-filters .filter-btn');
+      filterBtns.forEach(btn => {
+        if (btn.dataset.cat === targetCat) {
+          btn.className = 'px-5 py-2 rounded-full text-xs font-semibold transition-all bg-olive-500 text-white shadow-sm filter-btn';
+        } else {
+          btn.className = 'px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn';
+        }
+      });
+
+      activeCategory = targetCat;
+      renderProducts();
+
+      // Close mobile drawer if open
+      const mobileDrawer = document.getElementById('mobile-menu-drawer');
+      if (mobileDrawer) mobileDrawer.classList.add('hidden');
+    });
   });
 
   // --- MINIMALIST LOGIN MODAL ---
