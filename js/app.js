@@ -636,9 +636,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // --- TAB NAVIGATION SWITCHER ---
+  function switchTab(tabName) {
+    if (!tabName) tabName = 'home';
+    tabName = tabName.replace('#', '');
+    
+    const validTabs = ['home', 'shop', 'philosophy', 'workshop', 'preservation', 'blog', 'contact'];
+    if (!validTabs.includes(tabName)) tabName = 'home';
+
+    // Hide all tabs
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+
+    // Show target tab
+    const targetTab = document.getElementById(`tab-${tabName}`);
+    if (targetTab) {
+      targetTab.classList.remove('hidden');
+    }
+
+    // Update nav link active state
+    document.querySelectorAll('.nav-tab-link').forEach(link => {
+      const linkTab = link.getAttribute('data-tab');
+      if (linkTab === tabName) {
+        link.classList.add('nav-tab-active');
+      } else {
+        link.classList.remove('nav-tab-active');
+      }
+    });
+
+    // Scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Attach click events to nav tab links
+  document.querySelectorAll('.nav-tab-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const tab = link.getAttribute('data-tab');
+      if (tab) {
+        switchTab(tab);
+      }
+    });
+  });
+
+  // Handle URL hash change (e.g., #shop or #workshop)
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash.substring(1);
+    if (hash) switchTab(hash);
+  });
+
   // --- INITIALIZE ---
   updateShopInfoUI();
   renderProducts();
   renderWorkshops();
   renderBlogs();
+
+  // Initialize Tab on Load
+  const initialHash = window.location.hash.substring(1);
+  switchTab(initialHash || 'home');
 });
