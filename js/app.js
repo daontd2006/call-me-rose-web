@@ -7,14 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const store = window.shopStore;
   let activeCategory = 'all';
 
-  // --- SINGLE PAGE VIEW ROUTING (HOME / WORKSHOP / PRESERVATION) ---
-  window.openPageView = function(viewName) {
+  // --- SINGLE PAGE VIEW ROUTING (HOME / WORKSHOP / PRESERVATION / PRODUCT DETAIL) ---
+  window.openPageView = function(viewName, productId = null) {
     const mainContent = document.getElementById('main-content');
     const viewWorkshop = document.getElementById('view-workshop');
     const viewPreservation = document.getElementById('view-preservation');
+    const viewProductDetail = document.getElementById('view-product-detail');
 
     if (viewWorkshop) viewWorkshop.classList.add('hidden');
     if (viewPreservation) viewPreservation.classList.add('hidden');
+    if (viewProductDetail) viewProductDetail.classList.add('hidden');
     if (mainContent) mainContent.classList.remove('hidden');
 
     if (viewName === 'workshop') {
@@ -24,6 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (viewName === 'preservation') {
       if (mainContent) mainContent.classList.add('hidden');
       if (viewPreservation) viewPreservation.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (viewName === 'product-detail' && productId) {
+      if (mainContent) mainContent.classList.add('hidden');
+      if (viewProductDetail) viewProductDetail.classList.remove('hidden');
+      renderProductDetailPage(productId);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -74,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     items.forEach(p => {
       const card = document.createElement('div');
       card.className = 'clean-card overflow-hidden flex flex-col justify-between group cursor-pointer p-4';
-      card.onclick = () => openProductModal(p.id);
+      card.onclick = () => openPageView('product-detail', p.id);
 
       const priceFormatted = new Intl.NumberFormat('vi-VN').format(p.price) + 'đ';
 
@@ -107,6 +114,129 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
       grid.appendChild(card);
+    });
+
+    lucide.createIcons();
+  }
+
+  // --- RENDER DEDICATED PRODUCT DETAIL PAGE ---
+  function renderProductDetailPage(productId) {
+    const p = store.data.products.find(item => item.id === productId);
+    if (!p) return;
+
+    const catNames = {
+      'muguet-de-mai': 'Muguet de mai',
+      'clay-lily': 'Muguet de mai',
+      'bridal-headpieces': 'Bridal - Headpieces',
+      'accessories': 'Accessories',
+      'bridal-jewelry': 'Accessories',
+      'preservation': 'Preservation'
+    };
+    const catDisplay = catNames[p.category] || p.category;
+    const priceFormatted = new Intl.NumberFormat('vi-VN').format(p.price) + 'đ';
+
+    document.getElementById('pdetail-category-breadcrumb').textContent = catDisplay.toUpperCase();
+
+    const container = document.getElementById('product-detail-container');
+    container.innerHTML = `
+      <!-- Left Column: High-Res Image Gallery Showcase -->
+      <div class="lg:col-span-6 space-y-4">
+        <div class="relative rounded-3xl overflow-hidden bg-white shadow-xl aspect-[4/5] border border-olive-100/80 group">
+          <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <span class="absolute top-4 left-4 bg-olive-900/90 backdrop-blur-md text-white text-[10px] uppercase font-semibold tracking-widest px-3.5 py-1.5 rounded-full shadow-sm">
+            Handcrafted Clay
+          </span>
+        </div>
+      </div>
+
+      <!-- Right Column: Luxury Product Information & Direct Order Options -->
+      <div class="lg:col-span-6 space-y-8">
+        <div class="space-y-3">
+          <span class="text-xs font-semibold uppercase tracking-[0.25em] text-olive-500">${catDisplay}</span>
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#3E452E] tracking-tight leading-tight">
+            ${p.name}
+          </h1>
+          <div class="font-serif text-2xl font-semibold text-olive-800 pt-1">
+            ${priceFormatted}
+          </div>
+        </div>
+
+        <p class="text-sm text-olive-700 leading-relaxed font-light">
+          ${p.description}
+        </p>
+
+        <!-- Custom Note / Engraving Input -->
+        <div class="space-y-2 bg-white p-5 rounded-2xl border border-olive-200/80 shadow-sm">
+          <label class="block text-xs font-semibold text-olive-800 uppercase tracking-wider" for="pdetail-custom-note">
+            ✦ Yêu cầu riêng / Khắc tên cô dâu chú rể:
+          </label>
+          <input type="text" id="pdetail-custom-note" placeholder="Nhập tên & ngày cưới (Ví dụ: Nam & Mai 2026)..." class="w-full bg-olive-50/70 border border-olive-200 rounded-xl p-3 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="space-y-3 pt-2">
+          <button id="pdetail-add-cart-btn" class="w-full py-4 rounded-full bg-olive-900 text-white font-serif text-xs font-semibold tracking-[0.2em] uppercase hover:bg-olive-700 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Thêm Vào Giỏ Hàng
+          </button>
+          <button onclick="window.open('https://zalo.me/0987654321', '_blank')" class="w-full py-3.5 rounded-full bg-white text-olive-800 border border-olive-300 font-serif text-xs font-semibold tracking-[0.15em] uppercase hover:bg-olive-50 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="message-circle" class="w-4 h-4 text-olive-600"></i> Tư Vấn Zalo Trực Tiếp
+          </button>
+        </div>
+
+        <!-- Material & Delivery Guarantees -->
+        <div class="border-t border-olive-200/80 pt-6 space-y-4 text-xs text-olive-700">
+          <div class="flex items-start gap-3">
+            <i data-lucide="sparkles" class="w-4 h-4 text-olive-500 shrink-0 mt-0.5"></i>
+            <div>
+              <strong class="text-olive-900 block font-semibold mb-0.5">Chế tác thủ công nghệ thuật:</strong>
+              Tạo hình hoàn toàn bằng tay từ đất sét Nhật Bản siêu nhẹ xốp, hoa giữ phom và màu sắc kỷ niệm theo năm tháng.
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <i data-lucide="truck" class="w-4 h-4 text-olive-500 shrink-0 mt-0.5"></i>
+            <div>
+              <strong class="text-olive-900 block font-semibold mb-0.5">Đóng gói &amp; Vận chuyển:</strong>
+              Đóng gói kèm hộp quà tặng sang trọng, bọc đệm chống va đập, bảo hành cẩn thận tới tận tay cô dâu trên toàn quốc.
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById('pdetail-add-cart-btn').onclick = () => {
+      const note = document.getElementById('pdetail-custom-note').value;
+      addToCart(p.id, note);
+    };
+
+    // Render Related Products
+    const relatedGrid = document.getElementById('related-products-grid');
+    relatedGrid.innerHTML = '';
+
+    const relatedItems = store.data.products.filter(item => item.id !== p.id).slice(0, 3);
+    relatedItems.forEach(rel => {
+      const relPriceFormatted = new Intl.NumberFormat('vi-VN').format(rel.price) + 'đ';
+      const relCatDisplay = catNames[rel.category] || rel.category;
+
+      const card = document.createElement('div');
+      card.className = 'clean-card overflow-hidden flex flex-col justify-between group cursor-pointer p-4';
+      card.onclick = () => openPageView('product-detail', rel.id);
+
+      card.innerHTML = `
+        <div>
+          <div class="relative overflow-hidden h-72 rounded-2xl bg-olive-50 mb-4">
+            <img src="${rel.image}" alt="${rel.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="space-y-1">
+            <div class="text-[10px] text-olive-500 font-semibold uppercase tracking-[0.2em]">${relCatDisplay}</div>
+            <h4 class="font-serif text-base font-semibold text-olive-900 group-hover:text-olive-600 transition-colors line-clamp-1">${rel.name}</h4>
+          </div>
+        </div>
+        <div class="mt-4 pt-3 border-t border-olive-100 flex items-center justify-between">
+          <span class="text-xs font-semibold text-olive-900">${relPriceFormatted}</span>
+          <span class="text-xs font-semibold text-olive-600 group-hover:translate-x-1 transition-transform">Xem &rarr;</span>
+        </div>
+      `;
+      relatedGrid.appendChild(card);
     });
 
     lucide.createIcons();
