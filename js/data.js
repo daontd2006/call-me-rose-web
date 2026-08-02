@@ -30,7 +30,7 @@ const DEFAULT_SHOP_DATA = {
       rating: 5.0,
       reviewsCount: 36,
       isBestSeller: true,
-      description: "Bó hoa cưới thủ công tỉ mỉ từng chuông hoa linh lan bằng đất sét Nhật Bản cao cấp. Giữ nguyên vẻ tinh khôi mềm mại, bảo tồn trọn đời làm kỷ vật ngày chung đôi.",
+      description: "Bó hoa cưới thủ công tỉ mỉ từng chuông hoa linh lan bằng đất sét Nhật Bản cao cấp. Giữ nguyên vẻ tinh khôi mềm mại cùng thời gian cho ngày chung đôi.",
       specs: [
         "Chất liệu: Đất sét Nhật Bản cao cấp siêu nhẹ & dẻo dai",
         "Kích thước: Chiều dài bó 32cm, 100+ chuông hoa nắn tay tỉ mỉ",
@@ -76,7 +76,7 @@ const DEFAULT_SHOP_DATA = {
     },
     {
       id: "prod-4",
-      name: "Khối Kỷ Vật Resin Bảo Tồn Bó Hoa Cưới (Custom Resin & Clay Keepsake)",
+      name: "Khối Đèn Resin Đúc Hoa Cưới (Custom Resin & Clay Floral Light)",
       category: "preservation",
       price: 2450000,
       originalPrice: 2800000,
@@ -84,7 +84,7 @@ const DEFAULT_SHOP_DATA = {
       rating: 5.0,
       reviewsCount: 42,
       isBestSeller: true,
-      description: "Dịch vụ đúc khối resin trong suốt bảo tồn bó hoa cưới thật hoặc bó hoa đất sét kỷ niệm. Kết hợp khắc tên cô dâu chú rể & ngày cưới trường tồn.",
+      description: "Dịch vụ đúc khối resin trong suốt kết hợp hoa cưới tươi hoặc hoa đất sét nghệ thuật. Khắc tên cô dâu chú rể & ngày cưới tinh tế.",
       specs: [
         "Kích thước khối: 20cm x 20cm x 8cm nguyên khối",
         "Quy trình xử lý: 14 - 21 ngày thủ công tỉ mỉ",

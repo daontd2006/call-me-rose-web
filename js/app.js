@@ -168,18 +168,18 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Custom Note / Engraving Input -->
         <div class="space-y-2 bg-white p-5 rounded-2xl border border-olive-200/80 shadow-sm">
           <label class="block text-xs font-semibold text-olive-800 uppercase tracking-wider" for="pdetail-custom-note">
-            ✦ Yêu cầu riêng / Khắc tên cô dâu chú rể:
+            ✦ SPECIAL REQUESTS &amp; ENGRAVING:
           </label>
-          <input type="text" id="pdetail-custom-note" placeholder="Nhập tên & ngày cưới (Ví dụ: Nam & Mai 2026)..." class="w-full bg-olive-50/70 border border-olive-200 rounded-xl p-3 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+          <input type="text" id="pdetail-custom-note" placeholder="Enter names &amp; date (e.g. Nam &amp; Mai 2026)..." class="w-full bg-olive-50/70 border border-olive-200 rounded-xl p-3 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
         </div>
 
         <!-- Action Buttons -->
         <div class="space-y-3 pt-2">
           <button id="pdetail-add-cart-btn" class="w-full py-4 rounded-full bg-olive-900 text-white font-serif text-xs font-semibold tracking-[0.2em] uppercase hover:bg-olive-700 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
-            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Thêm Vào Giỏ Hàng
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> ADD TO BAG
           </button>
           <button onclick="window.open('https://zalo.me/0987654321', '_blank')" class="w-full py-3.5 rounded-full bg-white text-olive-800 border border-olive-300 font-serif text-xs font-semibold tracking-[0.15em] uppercase hover:bg-olive-50 transition-all flex items-center justify-center gap-2">
-            <i data-lucide="message-circle" class="w-4 h-4 text-olive-600"></i> Tư Vấn Zalo Trực Tiếp
+            <i data-lucide="message-circle" class="w-4 h-4 text-olive-600"></i> ZALO CONSULTATION
           </button>
         </div>
 
@@ -188,15 +188,15 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="flex items-start gap-3">
             <i data-lucide="sparkles" class="w-4 h-4 text-olive-500 shrink-0 mt-0.5"></i>
             <div>
-              <strong class="text-olive-900 block font-semibold mb-0.5">Chế tác thủ công nghệ thuật:</strong>
-              Tạo hình hoàn toàn bằng tay từ đất sét Nhật Bản siêu nhẹ xốp, hoa giữ phom và màu sắc kỷ niệm theo năm tháng.
+              <strong class="text-olive-900 block font-semibold mb-0.5">Artisanal Craftsmanship:</strong>
+              Tạo hình hoàn toàn bằng tay từ đất sét Nhật Bản siêu nhẹ xốp, giữ nguyên vẻ đẹp mềm mại nghệ thuật cùng thời gian.
             </div>
           </div>
           <div class="flex items-start gap-3">
             <i data-lucide="truck" class="w-4 h-4 text-olive-500 shrink-0 mt-0.5"></i>
             <div>
-              <strong class="text-olive-900 block font-semibold mb-0.5">Đóng gói &amp; Vận chuyển:</strong>
-              Đóng gói kèm hộp quà tặng sang trọng, bọc đệm chống va đập, bảo hành cẩn thận tới tận tay cô dâu trên toàn quốc.
+              <strong class="text-olive-900 block font-semibold mb-0.5">Packaging &amp; Delivery:</strong>
+              Đóng gói kèm hộp quà tặng bọc lụa sang trọng, bọc đệm chống va đập, vận chuyển cẩn thận tới tận tay cô dâu trên toàn quốc.
             </div>
           </div>
         </div>
