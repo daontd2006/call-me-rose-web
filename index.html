@@ -135,16 +135,9 @@
       
       <!-- Brand Logo Left -->
       <a href="#" onclick="openPageView('home'); return false;" class="flex items-center gap-3 group" aria-label="Trang chủ Call Me Rose">
-        <div class="w-9 h-9 rounded-full bg-olive-100 flex items-center justify-center text-olive-600 group-hover:bg-olive-500 group-hover:text-white transition-colors duration-300">
-          <svg class="w-5 h-5 fill-none stroke-current stroke-[1.6]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 21C7 21 10 13 18 3" />
-            <path d="M11 15.5C8 15.5 6.5 13 7.5 10.5C10 10.5 11.5 12.5 11 15.5Z" />
-            <path d="M13.5 11.5C12 8.5 13 6 16 6C16 8.5 15 10.5 13.5 11.5Z" />
-            <path d="M16 7.5C15 5 16.5 3 19 3C19 5 18 6.5 16 7.5Z" />
-          </svg>
-        </div>
+        <img src="assets/brand_logo.png" alt="Call Me Rose Logo" class="w-10 h-10 sm:w-11 sm:h-11 object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
         <div class="flex flex-col">
-          <span class="font-serif text-xl font-bold tracking-tight text-olive-900 group-hover:text-olive-500 transition-colors" id="nav-brand-name">
+          <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-olive-900 group-hover:text-olive-500 transition-colors" id="nav-brand-name">
             Call Me Rose
           </span>
         </div>
@@ -507,59 +500,52 @@
 
   <!-- 0. BILINGUAL MOBILE NAVIGATION DRAWER -->
   <div id="mobile-menu-drawer" class="fixed inset-0 z-50 hidden">
-    <div class="modal-backdrop absolute inset-0" id="close-mobile-menu-backdrop"></div>
+    <div class="modal-backdrop absolute inset-0 bg-black/40 backdrop-blur-sm" id="close-mobile-menu-backdrop"></div>
     <div class="absolute inset-y-0 left-0 max-w-full flex pr-10">
       <div class="w-screen max-w-xs bg-[#FAF8F5] shadow-2xl flex flex-col justify-between p-6 border-r border-[#E7DDD0] animate-slide-right">
         
         <div>
-          <div class="flex items-center justify-between pb-6 border-b border-olive-100 mb-8">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-full bg-olive-100 flex items-center justify-center text-olive-600">
-                <svg class="w-4 h-4 fill-none stroke-current stroke-[1.6]" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M7 21C7 21 10 13 18 3" />
-                  <path d="M11 15.5C8 15.5 6.5 13 7.5 10.5C10 10.5 11.5 12.5 11 15.5Z" />
-                  <path d="M13.5 11.5C12 8.5 13 6 16 6C16 8.5 15 10.5 13.5 11.5Z" />
-                  <path d="M16 7.5C15 5 16.5 3 19 3C19 5 18 6.5 16 7.5Z" />
-                </svg>
-              </div>
+          <div class="flex items-center justify-between pb-6 border-b border-olive-100 mb-6">
+            <div class="flex items-center gap-3">
+              <img src="assets/brand_logo.png" alt="Call Me Rose Logo" class="w-9 h-9 object-contain">
               <span class="font-serif text-lg font-bold text-olive-900">Call Me Rose</span>
             </div>
-            <button id="close-mobile-menu-btn" class="p-2 text-olive-400 hover:text-olive-900" aria-label="Đóng menu di động">
+            <button id="close-mobile-menu-btn" class="p-2 text-olive-400 hover:text-olive-900 transition-colors" aria-label="Đóng menu di động">
               <i data-lucide="x" class="w-5 h-5"></i>
             </button>
           </div>
 
-          <nav class="flex flex-col space-y-4" role="navigation">
+          <nav class="flex flex-col space-y-2" role="navigation">
             <div class="space-y-1">
-              <a href="#shop" class="mobile-nav-link block py-2 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
-                SHOP
+              <a href="#shop" onclick="openPageView('home');" class="mobile-nav-link block py-2 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
+                SHOP &amp; COLLECTIONS
               </a>
-              <div class="pl-3 space-y-1.5 pt-1 pb-2 border-b border-olive-100/40 text-xs">
-                <a href="#shop" data-cat-select="muguet-de-mai" class="mobile-nav-link block text-olive-700 hover:text-olive-500 font-medium py-1">✦ Muguet de mai</a>
-                <a href="#shop" data-cat-select="bridal-headpieces" class="mobile-nav-link block text-olive-700 hover:text-olive-500 font-medium py-1">✦ Bridal - Headpieces</a>
-                <a href="#shop" data-cat-select="accessories" class="mobile-nav-link block text-olive-700 hover:text-olive-500 font-medium py-1">✦ Accessories</a>
-                <a href="#shop" data-cat-select="preservation" class="mobile-nav-link block text-olive-700 hover:text-olive-500 font-medium py-1">✦ Preservation</a>
+              <div class="pl-3 space-y-1.5 pt-1.5 pb-2 border-b border-olive-100/40 text-xs">
+                <a href="#shop" data-cat-select="muguet-de-mai" class="mobile-nav-link block text-olive-800 hover:text-olive-600 font-medium py-1">✦ Muguet de mai</a>
+                <a href="#shop" data-cat-select="bridal-headpieces" class="mobile-nav-link block text-olive-800 hover:text-olive-600 font-medium py-1">✦ Bridal - Headpieces</a>
+                <a href="#shop" data-cat-select="accessories" class="mobile-nav-link block text-olive-800 hover:text-olive-600 font-medium py-1">✦ Accessories</a>
+                <a href="#shop" data-cat-select="preservation" class="mobile-nav-link block text-olive-800 hover:text-olive-600 font-medium py-1">✦ Preservation</a>
               </div>
             </div>
-            <a href="#philosophy" class="mobile-nav-link block py-2.5 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
+            <a href="#philosophy" onclick="openPageView('home');" class="mobile-nav-link block py-2.5 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
               ABOUT
             </a>
-            <a href="#workshop" class="mobile-nav-link block py-2.5 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
+            <a href="#workshop" onclick="openPageView('workshop'); return false;" class="mobile-nav-link block py-2.5 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
               WORKSHOP
             </a>
-            <a href="#custom-order" class="mobile-nav-link block py-2.5 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
+            <a href="#preservation" onclick="openPageView('preservation'); return false;" class="mobile-nav-link block py-2.5 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
               PRESERVATION
             </a>
-            <a href="#contact" class="mobile-nav-link block py-2.5 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
+            <a href="#contact" onclick="openPageView('home');" class="mobile-nav-link block py-2.5 border-b border-olive-100/60 font-serif text-base font-semibold tracking-widest text-olive-900">
               CONTACT
             </a>
           </nav>
         </div>
 
         <div class="pt-6 border-t border-olive-100 text-center space-y-3">
-          <p class="text-[11px] text-olive-500">Handcrafted Wedding Florals &amp; Keepsakes</p>
+          <p class="text-[11px] text-olive-500 font-serif italic">Handcrafted Florals &amp; Accessories</p>
           <a href="admin.html" class="inline-flex items-center gap-2 text-xs font-semibold text-olive-700 hover:text-olive-900">
-            <i data-lucide="user" class="w-3.5 h-3.5"></i> Quản Lý Shop
+            <i data-lucide="user" class="w-3.5 h-3.5"></i> Quản Lý Shop (Admin)
           </a>
         </div>
 
