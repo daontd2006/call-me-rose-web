@@ -7,11 +7,11 @@ const DEFAULT_SHOP_DATA = {
   settings: {
     shopName: "Call Me Rose",
     slogan: "Handcrafted Clay Lily Bouquets & Fine Bridal Headpieces",
-    phone: "0987 654 321",
-    zalo: "0987 654 321",
-    tiktok: "https://www.tiktok.com/@callmerose.florals",
-    facebook: "https://www.facebook.com/callmerose.wedding",
-    address: "Ngõ 57 Mễ Trì, Hà Nội",
+    phone: "0328 921 206",
+    zalo: "0328921206",
+    tiktok: "https://www.tiktok.com/@callmerosetranhhoakho?_r=1&_t=ZS-98XGdcEHPkn",
+    facebook: "https://www.facebook.com/callmerosetranhhoakho",
+    address: "57 Đ. Mễ Trì, Từ Liêm, Hà Nội",
     bank: {
       bankName: "MBBank (Ngoại Thương / Quân Đội)",
       accountNumber: "8888 6666 9999",

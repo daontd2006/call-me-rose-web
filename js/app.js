@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <button id="pdetail-add-cart-btn" class="w-full py-4 rounded-full bg-olive-900 text-white font-serif text-xs font-semibold tracking-[0.2em] uppercase hover:bg-olive-700 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2">
             <i data-lucide="shopping-bag" class="w-4 h-4"></i> ADD TO BAG
           </button>
-          <button onclick="window.open('https://zalo.me/0987654321', '_blank')" class="w-full py-3.5 rounded-full bg-white text-olive-800 border border-olive-300 font-serif text-xs font-semibold tracking-[0.15em] uppercase hover:bg-olive-50 transition-all flex items-center justify-center gap-2">
+          <button onclick="window.open('https://zalo.me/0328921206', '_blank')" class="w-full py-3.5 rounded-full bg-white text-olive-800 border border-olive-300 font-serif text-xs font-semibold tracking-[0.15em] uppercase hover:bg-olive-50 transition-all flex items-center justify-center gap-2">
             <i data-lucide="message-circle" class="w-4 h-4 text-olive-600"></i> ZALO CONSULTATION
           </button>
         </div>
