@@ -97,20 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       card.innerHTML = `
         <div>
-          <div class="relative overflow-hidden h-72 sm:h-80 lg:h-96 rounded-2xl bg-olive-50 mb-4">
+          <div class="relative overflow-hidden h-80 sm:h-96 lg:h-[420px] rounded-2xl bg-olive-50 mb-3">
             <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           </div>
           <div class="space-y-1">
             <div class="text-[10px] text-olive-500 font-semibold uppercase tracking-[0.2em]">${catDisplay}</div>
-            <h3 class="font-serif text-base sm:text-lg font-semibold text-olive-900 group-hover:text-olive-600 transition-colors line-clamp-1">${p.name}</h3>
-            <p class="text-xs text-olive-500 line-clamp-2">${p.description}</p>
+            <h3 class="font-serif text-base sm:text-lg font-normal text-olive-900 group-hover:text-olive-600 transition-colors line-clamp-1">${p.name}</h3>
           </div>
-        </div>
-        <div class="mt-4 pt-3 border-t border-olive-100 flex items-center justify-between">
-          <span class="text-xs font-semibold text-olive-900">${priceFormatted}</span>
-          <button onclick="event.stopPropagation(); addToCart('${p.id}')" class="p-2.5 rounded-full bg-olive-50 hover:bg-olive-900 hover:text-white text-olive-800 transition-colors shadow-sm" title="Thêm vào giỏ hàng">
-            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-          </button>
         </div>
       `;
       grid.appendChild(card);
@@ -223,17 +216,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       card.innerHTML = `
         <div>
-          <div class="relative overflow-hidden h-72 rounded-2xl bg-olive-50 mb-4">
+          <div class="relative overflow-hidden h-72 sm:h-80 rounded-2xl bg-olive-50 mb-3">
             <img src="${rel.image}" alt="${rel.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           </div>
           <div class="space-y-1">
             <div class="text-[10px] text-olive-500 font-semibold uppercase tracking-[0.2em]">${relCatDisplay}</div>
-            <h4 class="font-serif text-base font-semibold text-olive-900 group-hover:text-olive-600 transition-colors line-clamp-1">${rel.name}</h4>
+            <h4 class="font-serif text-base font-normal text-olive-900 group-hover:text-olive-600 transition-colors line-clamp-1">${rel.name}</h4>
           </div>
-        </div>
-        <div class="mt-4 pt-3 border-t border-olive-100 flex items-center justify-between">
-          <span class="text-xs font-semibold text-olive-900">${relPriceFormatted}</span>
-          <span class="text-xs font-semibold text-olive-600 group-hover:translate-x-1 transition-transform">Xem &rarr;</span>
         </div>
       `;
       relatedGrid.appendChild(card);
