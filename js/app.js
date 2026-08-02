@@ -50,7 +50,15 @@ function initApp() {
     document.getElementById('footer-phone').textContent = s.phone;
     document.getElementById('footer-tiktok').href = s.tiktok;
     document.getElementById('footer-facebook').href = s.facebook;
-    document.getElementById('floating-zalo-btn').onclick = () => window.open(`https://zalo.me/${s.zalo.replace(/\s+/g, '')}`, '_blank');
+    const zaloBtn = document.getElementById('floating-zalo-btn');
+    if (zaloBtn) zaloBtn.onclick = () => window.open(`https://zalo.me/${(s.zalo || '0328921206').replace(/\s+/g, '')}`, '_blank');
+    
+    // Ensure ambient video background auto plays seamlessly
+    const heroVid = document.getElementById('hero-ambient-video');
+    if (heroVid) {
+      heroVid.muted = true;
+      heroVid.play().catch(() => {});
+    }
   }
 
   // --- RENDER PRODUCTS GRID ---
