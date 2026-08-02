@@ -3,8 +3,8 @@
  * Pure Minimal Light Olive Theme
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-  const store = window.shopStore;
+function initApp() {
+  const store = window.shopStore || new ShopStore();
   let activeCategory = 'all';
 
   // --- SINGLE PAGE VIEW ROUTING (HOME / WORKSHOP / PRESERVATION / PRODUCT DETAIL) ---
@@ -846,9 +846,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  window.renderProducts = renderProducts;
+
   // --- INITIALIZE ---
   updateShopInfoUI();
   renderProducts();
-  renderWorkshops();
-  renderBlogs();
+  if (typeof renderWorkshops === 'function') renderWorkshops();
+  if (typeof renderBlogs === 'function') renderBlogs();
+}
+
+// Global execution trigger regardless of DOM load timing
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
+
+window.addEventListener('load', () => {
+  if (typeof window.renderProducts === 'function') {
+    window.renderProducts();
+  }
 });
