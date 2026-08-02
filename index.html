@@ -222,127 +222,67 @@
   <!-- MAIN CONTENT CONTAINER -->
   <main id="main-content" role="main">
 
-    <!-- HERO SECTION (Vivi Embellish Luxury Aesthetic) -->
-    <section class="hero-minimal-bg min-h-[620px] flex items-center justify-center text-center px-4 py-28 relative overflow-hidden">
-      <div class="hero-overlay absolute inset-0"></div>
+    <!-- HERO SECTION (Vivi Embellish Luxury Video & Editorial Style) -->
+    <section class="relative min-h-[85vh] flex items-center justify-center text-center px-6 py-28 overflow-hidden bg-[#FAF8F5]">
       
-      <div class="relative z-10 max-w-3xl mx-auto space-y-6">
-        
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-olive-600 bg-olive-100/80 px-4 py-1.5 rounded-full border border-olive-200/60">
-          Handcrafted Clay Lily Bouquets &amp; Bridal Headpieces
-        </span>
+      <!-- Dynamic Ambient Video Background -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-30 scale-105 filter saturate-50">
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-white-flowy-fabric-in-the-wind-41486-large.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#FAF8F5]/60 via-[#FAF8F5]/40 to-[#FAF8F5]"></div>
+      </div>
 
-        <div class="space-y-2">
-          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-olive-900 tracking-tight leading-[1.15]">
-            Handcrafted Clay Lily &amp; <span class="italic font-serif font-light text-olive-600">Bridal Headpieces</span>
+      <!-- Hero Content -->
+      <div class="relative z-10 max-w-4xl mx-auto space-y-10">
+        
+        <!-- Brand Pillars Tagline -->
+        <div class="flex items-center justify-center gap-3 sm:gap-6 text-[11px] sm:text-xs font-semibold tracking-[0.3em] uppercase text-olive-600">
+          <span>CAREFULLY CRAFTED</span>
+          <span class="text-olive-300">•</span>
+          <span>MODERN FEMININE</span>
+          <span class="text-olive-300">•</span>
+          <span>INSPIRED BY NATURE</span>
+        </div>
+
+        <!-- Headline & Quote -->
+        <div class="space-y-4">
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal text-olive-900 tracking-tight leading-[1.1]">
+            Handcrafted Clay Lily &amp; <br class="hidden sm:inline">
+            <span class="italic font-light text-olive-600 font-serif">Bridal Headpieces</span>
           </h1>
-          <p class="text-xs uppercase tracking-[0.2em] font-semibold text-olive-500 pt-1">
-            Hoa Cưới Linh Lan Đất Sét Nhật &amp; Phụ Kiện Cô Dâu
+          <p class="font-serif text-lg sm:text-2xl italic text-olive-700 font-light max-w-2xl mx-auto">
+            “Sculpted by hand from Japanese clay to preserve your cherished wedding memories forever”
           </p>
         </div>
 
-        <div class="space-y-1">
-          <p class="text-olive-700 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-            Exquisite handcrafted clay Lily of the Valley bouquets &amp; Vivi Embellish style bridal hair accessories, thoughtfully sculpted to preserve your cherished wedding memories forever.
-          </p>
-          <p class="text-xs text-olive-500 max-w-xl mx-auto font-normal leading-relaxed">
-            Bó hoa cưới linh lan đất sét Nhật làm tay tỉ mỉ &amp; phụ kiện cài tóc cô dâu kiều diễm lưu giữ kỷ niệm vĩnh cửu.
-          </p>
-        </div>
-
-        <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#shop" class="btn-pill-olive" title="Khám phá bộ sưu tập hoa cưới linh lan">
-            EXPLORE COLLECTION / Khám Phá
-          </a>
-          <a href="#workshop" class="btn-outline-luxury" title="Đặt lịch Workshop">
-            BOOK WORKSHOP / Đặt Lịch
+        <!-- Scroll CTA Button -->
+        <div class="pt-4">
+          <a href="#shop" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-olive-900 text-white font-serif text-xs font-semibold tracking-[0.2em] uppercase hover:bg-olive-700 transition-all duration-300 shadow-md hover:shadow-lg">
+            Explore Featured Collection
+            <i data-lucide="arrow-down" class="w-4 h-4 text-olive-300"></i>
           </a>
         </div>
 
       </div>
     </section>
 
-    <!-- 3 FEATURE PILLARS SECTION -->
-    <section class="py-20 bg-white border-b border-olive-100" aria-label="Đặc điểm thương hiệu">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-          
-          <div class="space-y-3 px-4">
-            <div class="feature-badge-icon">
-              <i data-lucide="sparkles" class="w-6 h-6"></i>
-            </div>
-            <h3 class="font-serif text-xl font-bold text-olive-900">Clay Lily of the Valley</h3>
-            <p class="text-xs text-olive-600 leading-relaxed">
-              Hand-sculpted Japanese clay lily bouquets. Soft, lifelike, and everlasting.<br>
-              <span class="text-[11px] text-olive-400">(Từng chuông hoa linh lan nắn tay thủ công tinh xảo)</span>
-            </p>
-          </div>
-
-          <div class="space-y-3 px-4">
-            <div class="feature-badge-icon">
-              <i data-lucide="crown" class="w-6 h-6"></i>
-            </div>
-            <h3 class="font-serif text-xl font-bold text-olive-900">Bridal Headpieces</h3>
-            <p class="text-xs text-olive-600 leading-relaxed">
-              Vivi Embellish style hairpins &amp; vines with freshwater pearls &amp; 18k gold.<br>
-              <span class="text-[11px] text-olive-400">(Phụ kiện cài tóc &amp; trang sức cô dâu quý phái)</span>
-            </p>
-          </div>
-
-          <div class="space-y-3 px-4">
-            <div class="feature-badge-icon">
-              <i data-lucide="heart" class="w-6 h-6"></i>
-            </div>
-            <h3 class="font-serif text-xl font-bold text-olive-900">Floral Keepsakes</h3>
-            <p class="text-xs text-olive-600 leading-relaxed">
-              Custom bouquet preservation &amp; resin art blocks crafted uniquely for your day.<br>
-              <span class="text-[11px] text-olive-400">(Bảo tồn bó hoa cưới &amp; đúc resin kỷ vật)</span>
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- OUR PHILOSOPHY SECTION -->
-    <section id="philosophy" class="py-24 bg-white text-center">
-      <div class="max-w-3xl mx-auto px-6 space-y-6">
-        
-        <div class="space-y-1">
-          <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Our Heritage</span>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-olive-900 tracking-tight">
-            The Call Me Rose Philosophy
-          </h2>
-          <p class="text-xs uppercase tracking-widest text-olive-500">Triết Lý Của Call Me Rose</p>
-        </div>
-
-        <p class="text-olive-700 text-sm sm:text-base leading-relaxed font-normal">
-          At Call Me Rose, we believe Lily of the Valley symbolizes the return of happiness and timeless purity. Each clay lily blossom and bridal hairpiece is delicately sculpted by hand, capturing the romantic essence of your special day and preserving it as a lifelong heirloom.
-        </p>
-
-        <p class="text-olive-500 text-xs sm:text-sm leading-relaxed font-normal italic border-t border-olive-100 pt-4 max-w-2xl mx-auto">
-          Tại Call Me Rose, mỗi nhành hoa linh lan đất sét Nhật và phụ kiện cô dâu được chế tác thủ công hoàn toàn bằng tay, biến cảm xúc trong lành của ngày hạnh phúc thành kỷ vật ngát hương cùng năm tháng.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- PRODUCTS CATALOG SECTION -->
-    <section id="shop" class="py-20 bg-olive-50 border-t border-olive-100">
+    <!-- PRODUCTS CATALOG SECTION (FEATURED COLLECTION) -->
+    <section id="shop" class="py-24 bg-white border-t border-olive-100">
       <div class="max-w-7xl mx-auto px-6">
         
-        <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
-          <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Bộ Sưu Tập Thủ Công</span>
-          <h2 class="font-serif text-3xl font-bold text-olive-900">Hoa Cưới Linh Lan &amp; Phụ Kiện Cô Dâu</h2>
+        <div class="text-center max-w-xl mx-auto mb-14 space-y-2">
+          <span class="text-xs font-semibold uppercase tracking-[0.25em] text-olive-500">FEATURED COLLECTION</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-normal text-olive-900 tracking-tight">Hoa Cưới Linh Lan &amp; Phụ Kiện Cô Dâu</h2>
         </div>
 
         <!-- Filter Tabs -->
-        <div class="flex flex-wrap justify-center gap-3 mb-12" id="category-filters" role="tablist">
-          <button data-cat="all" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-olive-500 text-white shadow-sm filter-btn" role="tab">Tất Cả</button>
-          <button data-cat="muguet-de-mai" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Muguet de mai</button>
-          <button data-cat="bridal-headpieces" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Bridal - Headpieces</button>
-          <button data-cat="accessories" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Accessories</button>
-          <button data-cat="preservation" class="px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Preservation</button>
+        <div class="flex flex-wrap justify-center gap-3 mb-14" id="category-filters" role="tablist">
+          <button data-cat="all" class="px-6 py-2 rounded-full text-xs font-semibold transition-all bg-olive-900 text-white shadow-sm filter-btn" role="tab">All</button>
+          <button data-cat="muguet-de-mai" class="px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-800 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Muguet de mai</button>
+          <button data-cat="bridal-headpieces" class="px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-800 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Bridal - Headpieces</button>
+          <button data-cat="accessories" class="px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-800 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Accessories</button>
+          <button data-cat="preservation" class="px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-800 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Preservation</button>
         </div>
 
         <!-- Product Grid -->

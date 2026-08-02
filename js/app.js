@@ -151,9 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.onclick = () => {
       document.querySelectorAll('.filter-btn').forEach(b => {
-        b.className = 'px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn';
+        b.className = 'px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-800 hover:bg-olive-100 border border-olive-200 filter-btn';
       });
-      btn.className = 'px-5 py-2 rounded-full text-xs font-semibold transition-all bg-olive-500 text-white shadow-sm filter-btn';
+      btn.className = 'px-6 py-2 rounded-full text-xs font-semibold transition-all bg-olive-900 text-white shadow-sm filter-btn';
       activeCategory = btn.dataset.cat;
       renderProducts();
     };
@@ -167,9 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const filterBtns = document.querySelectorAll('#category-filters .filter-btn');
       filterBtns.forEach(btn => {
         if (btn.dataset.cat === targetCat) {
-          btn.className = 'px-5 py-2 rounded-full text-xs font-semibold transition-all bg-olive-500 text-white shadow-sm filter-btn';
+          btn.className = 'px-6 py-2 rounded-full text-xs font-semibold transition-all bg-olive-900 text-white shadow-sm filter-btn';
         } else {
-          btn.className = 'px-5 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-700 hover:bg-olive-100 border border-olive-200 filter-btn';
+          btn.className = 'px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-800 hover:bg-olive-100 border border-olive-200 filter-btn';
         }
       });
 
