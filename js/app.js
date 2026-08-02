@@ -56,15 +56,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- RENDER PRODUCTS GRID ---
   function renderProducts(query = '') {
     const grid = document.getElementById('products-grid');
+    if (!grid) return;
     grid.innerHTML = '';
 
-    let items = store.data.products;
+    // Ensure fallback products if localStorage is empty
+    if (!store.data || !store.data.products || store.data.products.length === 0) {
+      if (typeof DEFAULT_SHOP_DATA !== 'undefined' && DEFAULT_SHOP_DATA.products) {
+        store.data = store.data || {};
+        store.data.products = [...DEFAULT_SHOP_DATA.products];
+        if (store.saveData) store.saveData();
+      }
+    }
+
+    let items = store.data.products || [];
     if (activeCategory !== 'all') {
       items = items.filter(p => p.category === activeCategory);
     }
     if (query.trim() !== '') {
       const q = query.toLowerCase();
-      items = items.filter(p => p.name.toLowerCase().includes(q) || p.description.toLowerCase().includes(q));
+      items = items.filter(p => (p.name && p.name.toLowerCase().includes(q)) || (p.description && p.description.toLowerCase().includes(q)));
     }
 
     if (items.length === 0) {
@@ -74,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="text-xs font-medium">Không tìm thấy sản phẩm phù hợp.</p>
         </div>
       `;
-      lucide.createIcons();
+      if (window.lucide) lucide.createIcons();
       return;
     }
 
@@ -82,8 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = document.createElement('div');
       card.className = 'clean-card overflow-hidden flex flex-col justify-between group cursor-pointer p-4';
       card.onclick = () => openPageView('product-detail', p.id);
-
-      const priceFormatted = new Intl.NumberFormat('vi-VN').format(p.price) + 'đ';
 
       const catNames = {
         'muguet-de-mai': 'Muguet de mai',
@@ -109,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
       grid.appendChild(card);
     });
 
-    lucide.createIcons();
+    if (window.lucide) lucide.createIcons();
   }
 
   // --- RENDER DEDICATED PRODUCT DETAIL PAGE ---

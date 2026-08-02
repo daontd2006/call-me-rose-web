@@ -96,7 +96,7 @@ const DEFAULT_SHOP_DATA = {
   workshops: [
     {
       id: "ws-1",
-      title: "Workshop: Tự Tay Đúc Đèn Resin Hoa Cưới Nghệ Thuật",
+      title: "Workshop Eco - Resin Lamp (Đèn Resin Hoa Khô)",
       duration: "2.5 Giờ",
       pricePerGuest: 550000,
       depositAmount: 200000,
