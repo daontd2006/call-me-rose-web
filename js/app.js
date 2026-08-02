@@ -673,27 +673,33 @@ function initApp() {
   document.getElementById('close-qr-backdrop').onclick = closeVietQRModal;
 
   // --- MOBILE MENU DRAWER CONTROLLER ---
-  const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+  window.openMobileMenu = function() {
+    const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+    if (mobileMenuDrawer) {
+      mobileMenuDrawer.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  window.closeMobileMenu = function() {
+    const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+    if (mobileMenuDrawer) {
+      mobileMenuDrawer.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  };
+
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
   const closeMobileMenuBackdrop = document.getElementById('close-mobile-menu-backdrop');
 
-  if (mobileMenuBtn && mobileMenuDrawer) {
-    mobileMenuBtn.onclick = () => {
-      mobileMenuDrawer.classList.remove('hidden');
-    };
+  if (mobileMenuBtn) mobileMenuBtn.onclick = openMobileMenu;
+  if (closeMobileMenuBtn) closeMobileMenuBtn.onclick = closeMobileMenu;
+  if (closeMobileMenuBackdrop) closeMobileMenuBackdrop.onclick = closeMobileMenu;
 
-    const closeMobileMenu = () => {
-      mobileMenuDrawer.classList.add('hidden');
-    };
-
-    if (closeMobileMenuBtn) closeMobileMenuBtn.onclick = closeMobileMenu;
-    if (closeMobileMenuBackdrop) closeMobileMenuBackdrop.onclick = closeMobileMenu;
-
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
-    });
-  }
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
 
   // --- BLOG MODAL ---
   function openBlogModal(blog) {
