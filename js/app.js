@@ -77,8 +77,30 @@ function initApp() {
     }
 
     let items = store.data.products || [];
+
+    // Normalize product categories in storage if needed
+    items.forEach(p => {
+      if (p.category === 'clay-lily' || (p.name && p.name.toLowerCase().includes('bó hoa cưới linh lan'))) {
+        p.category = 'muguet-de-mai';
+      }
+    });
+
     if (activeCategory !== 'all') {
-      items = items.filter(p => p.category === activeCategory);
+      items = items.filter(p => {
+        if (activeCategory === 'muguet-de-mai') {
+          return p.category === 'muguet-de-mai' || p.category === 'clay-lily' || (p.name && p.name.toLowerCase().includes('linh lan'));
+        }
+        if (activeCategory === 'accessories') {
+          return p.category === 'accessories' || p.category === 'bridal-jewelry';
+        }
+        if (activeCategory === 'bridal-headpieces') {
+          return p.category === 'bridal-headpieces' || p.category === 'headpiece';
+        }
+        if (activeCategory === 'preservation') {
+          return p.category === 'preservation' || p.category === 'bao-ton' || p.category === 'luu-giu';
+        }
+        return p.category === activeCategory;
+      });
     }
     if (query.trim() !== '') {
       const q = query.toLowerCase();
