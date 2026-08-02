@@ -271,9 +271,61 @@
           <button data-cat="preservation" class="px-6 py-2 rounded-full text-xs font-semibold transition-all bg-white text-olive-800 hover:bg-olive-100 border border-olive-200 filter-btn" role="tab">Preservation</button>
         </div>
 
-        <!-- Product Grid (3 Columns Vivi Embellish Style) -->
+        <!-- Product Grid (3 Columns Vivi Embellish Style - Pre-rendered for Instant Load) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-10" id="products-grid">
-          <!-- Rendered by JS -->
+          
+          <!-- Product 1 -->
+          <div onclick="openPageView('product-detail', 'prod-1')" class="clean-card overflow-hidden flex flex-col justify-between group cursor-pointer p-4">
+            <div>
+              <div class="relative overflow-hidden h-80 sm:h-96 lg:h-[420px] rounded-2xl bg-olive-50 mb-3">
+                <img src="assets/clay_lily_bouquet.png" alt="Bó Hoa Cưới Linh Lan Đất Sét Nhật Bản (Clay Lily Bouquet)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="space-y-1">
+                <div class="text-[10px] text-olive-500 font-semibold uppercase tracking-[0.2em]">Muguet de mai</div>
+                <h3 class="font-serif text-base sm:text-lg font-normal text-olive-900 group-hover:text-olive-600 transition-colors line-clamp-1">Bó Hoa Cưới Linh Lan Đất Sét Nhật Bản (Clay Lily Bouquet)</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div onclick="openPageView('product-detail', 'prod-2')" class="clean-card overflow-hidden flex flex-col justify-between group cursor-pointer p-4">
+            <div>
+              <div class="relative overflow-hidden h-80 sm:h-96 lg:h-[420px] rounded-2xl bg-olive-50 mb-3">
+                <img src="assets/clay_bridal_headpiece.png" alt="Bộ Phụ Kiện Cài Tóc Cô Dâu Hoa Linh Lan (Clay Lily Headpiece Set)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="space-y-1">
+                <div class="text-[10px] text-olive-500 font-semibold uppercase tracking-[0.2em]">Bridal - Headpieces</div>
+                <h3 class="font-serif text-base sm:text-lg font-normal text-olive-900 group-hover:text-olive-600 transition-colors line-clamp-1">Bộ Phụ Kiện Cài Tóc Cô Dâu Hoa Linh Lan (Clay Lily Headpiece Set)</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div onclick="openPageView('product-detail', 'prod-3')" class="clean-card overflow-hidden flex flex-col justify-between group cursor-pointer p-4">
+            <div>
+              <div class="relative overflow-hidden h-80 sm:h-96 lg:h-[420px] rounded-2xl bg-olive-50 mb-3">
+                <img src="assets/bridal_hair_accessory.png" alt="Hoa Tai Cô Dâu Dáng Nhành Linh Lan Đất Sét (Clay Lily Earrings)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="space-y-1">
+                <div class="text-[10px] text-olive-500 font-semibold uppercase tracking-[0.2em]">Accessories</div>
+                <h3 class="font-serif text-base sm:text-lg font-normal text-olive-900 group-hover:text-olive-600 transition-colors line-clamp-1">Hoa Tai Cô Dâu Dáng Nhành Linh Lan Đất Sét (Clay Lily Earrings)</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div onclick="openPageView('product-detail', 'prod-4')" class="clean-card overflow-hidden flex flex-col justify-between group cursor-pointer p-4">
+            <div>
+              <div class="relative overflow-hidden h-80 sm:h-96 lg:h-[420px] rounded-2xl bg-olive-50 mb-3">
+                <img src="assets/resin_floral_light.png" alt="Khối Đèn Resin Đúc Hoa Cưới (Custom Resin & Clay Floral Light)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="space-y-1">
+                <div class="text-[10px] text-olive-500 font-semibold uppercase tracking-[0.2em]">Preservation</div>
+                <h3 class="font-serif text-base sm:text-lg font-normal text-olive-900 group-hover:text-olive-600 transition-colors line-clamp-1">Khối Đèn Resin Đúc Hoa Cưới (Custom Resin & Clay Floral Light)</h3>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
