@@ -117,7 +117,23 @@
           }
         }
       }
-    }
+    // Immediate mobile menu toggle functions
+    window.openMobileMenu = function() {
+      var d = document.getElementById('mobile-menu-drawer');
+      if (d) {
+        d.classList.remove('hidden');
+        d.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+    };
+    window.closeMobileMenu = function() {
+      var d = document.getElementById('mobile-menu-drawer');
+      if (d) {
+        d.classList.add('hidden');
+        d.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    };
   </script>
 
   <!-- Lucide Icons & Supabase SDK -->

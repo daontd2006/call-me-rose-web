@@ -37,7 +37,11 @@ function initApp() {
     }
 
     const mobileDrawer = document.getElementById('mobile-menu-drawer');
-    if (mobileDrawer) mobileDrawer.classList.add('hidden');
+    if (mobileDrawer) {
+      mobileDrawer.classList.add('hidden');
+      mobileDrawer.style.display = 'none';
+      document.body.style.overflow = '';
+    }
   };
 
   // --- INITIALIZE UI DATA ---
@@ -677,6 +681,7 @@ function initApp() {
     const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
     if (mobileMenuDrawer) {
       mobileMenuDrawer.classList.remove('hidden');
+      mobileMenuDrawer.style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
   };
@@ -685,6 +690,7 @@ function initApp() {
     const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
     if (mobileMenuDrawer) {
       mobileMenuDrawer.classList.add('hidden');
+      mobileMenuDrawer.style.display = 'none';
       document.body.style.overflow = '';
     }
   };
