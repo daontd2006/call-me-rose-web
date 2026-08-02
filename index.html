@@ -134,7 +134,7 @@
     <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
       
       <!-- Brand Logo Left -->
-      <a href="#" class="flex items-center gap-3 group" aria-label="Trang chủ Call Me Rose">
+      <a href="#" onclick="openPageView('home'); return false;" class="flex items-center gap-3 group" aria-label="Trang chủ Call Me Rose">
         <div class="w-9 h-9 rounded-full bg-olive-100 flex items-center justify-center text-olive-600 group-hover:bg-olive-500 group-hover:text-white transition-colors duration-300">
           <i data-lucide="flower-2" class="w-5 h-5"></i>
         </div>
@@ -188,13 +188,13 @@
           </div>
         </div>
 
-        <a href="#philosophy" class="nav-item">ABOUT</a>
+        <a href="#philosophy" onclick="openPageView('home');" class="nav-item">ABOUT</a>
 
-        <a href="#workshop" class="nav-item">WORKSHOP</a>
+        <a href="#workshop" onclick="openPageView('workshop'); return false;" class="nav-item">WORKSHOP</a>
 
-        <a href="#custom-order" class="nav-item">PRESERVATION</a>
+        <a href="#preservation" onclick="openPageView('preservation'); return false;" class="nav-item">PRESERVATION</a>
 
-        <a href="#contact" class="nav-item">CONTACT</a>
+        <a href="#contact" onclick="openPageView('home');" class="nav-item">CONTACT</a>
       </nav>
 
       <!-- Action Buttons Right -->
@@ -279,81 +279,87 @@
       </div>
     </section>
 
-    <!-- WORKSHOP BOOKING SECTION -->
-    <section id="workshop" class="py-24 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
-          <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Lớp Học Trải Nghiệm</span>
-          <h2 class="font-sans text-3xl font-bold text-olive-900">Đặt Lịch Workshop Đúc Resin</h2>
-          <p class="text-xs text-olive-600">Tự tay đúc đèn ngủ resin hoa cưới trong không gian workshop yên bình tại Hà Nội</p>
-        </div>
-
-        <div class="space-y-6 max-w-4xl mx-auto" id="workshop-list">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- BOUQUET PRESERVATION REQUEST SECTION -->
-    <section id="custom-order" class="py-20 bg-olive-50 border-t border-olive-100">
-      <div class="max-w-3xl mx-auto px-6 text-center space-y-8">
-        <div class="space-y-3">
-          <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Dịch Vụ Đặt Theo Yêu Cầu</span>
-          <h2 class="font-sans text-3xl font-bold text-olive-900">Bảo Tồn Bó Hoa Cưới Của Bạn</h2>
-          <p class="text-xs text-olive-600 max-w-lg mx-auto">
-            Gửi bó hoa tươi sau lễ cưới cho Call Me Rose để chế tác thành tác phẩm đèn resin nghệ thuật lưu giữ kỷ niệm.
-          </p>
-        </div>
-
-        <form id="custom-order-form" class="bg-white p-8 rounded-2xl border border-olive-100 text-left grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-name">Họ và tên cô dâu / chú rể</label>
-            <input type="text" id="cust-name" required placeholder="Họ và tên cô dâu / chú rể" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-phone">Số Zalo liên hệ</label>
-            <input type="tel" id="cust-phone" required placeholder="0901 234 567" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-date">Ngày cưới diễn ra</label>
-            <input type="date" id="cust-date" required class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-type">Kiểu dáng muốn đúc</label>
-            <select id="cust-type" class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
-              <option value="Đèn Resin Floral Light Đế Gỗ">Đèn Resin Floral Light Đế Gỗ</option>
-              <option value="Khối Resin Kỷ Vật Trái Tim">Khối Resin Kỷ Vật Trái Tim</option>
-              <option value="Phụ Kiện Cài Tóc & Trang Sức">Phụ Kiện Cài Tóc &amp; Trang Sức</option>
-            </select>
-          </div>
-          <div class="sm:col-span-2">
-            <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-notes">Ghi chú (Tên khắc, màu hoa)</label>
-            <textarea id="cust-notes" rows="3" placeholder="Ghi chú thêm thông tin cho Call Me Rose..." class="w-full bg-olive-50 border border-olive-200 rounded-lg p-2.5 text-xs text-olive-900 focus:outline-none focus:border-olive-500"></textarea>
-          </div>
-          <div class="sm:col-span-2 text-center pt-2">
-            <button type="submit" class="btn-pill-olive">
-              Gửi Yêu Cầu Bảo Tồn
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- BLOG / STORIES SECTION -->
-    <section id="blog" class="py-24 bg-white">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
-          <span class="text-xs font-semibold uppercase tracking-widest text-olive-400">Tạp Chí Hoa Cưới</span>
-          <h2 class="font-sans text-3xl font-bold text-olive-900">Stories &amp; Blog Hoa Cưới</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="blog-grid">
-          <!-- Rendered by JS -->
-        </div>
-      </div>
-    </section>
-
   </main>
+
+  <!-- DEDICATED WORKSHOP PAGE VIEW -->
+  <div id="view-workshop" class="hidden min-h-screen bg-[#FAF8F5] pt-28 pb-20">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <!-- Back to Home Button -->
+      <button onclick="openPageView('home');" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-olive-600 hover:text-olive-900 mb-8 transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Quay Lại Trang Chủ
+      </button>
+
+      <!-- Workshop Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-[0.25em] text-olive-500">LỚP HỌC TRẢI NGHIỆM THỦ CÔNG</span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-normal text-[#3E452E] tracking-tight">Workshop Đúc Đèn Resin Hoa Cưới</h1>
+        <p class="text-xs sm:text-sm text-olive-600 leading-relaxed max-w-xl mx-auto">
+          Tự tay lưu giữ những nhành hoa linh lan &amp; hoa cưới kỷ niệm trong khối đèn ngủ Resin trong suốt tại không gian studio yên bình Call Me Rose.
+        </p>
+      </div>
+
+      <!-- Workshop List Container -->
+      <div id="workshop-list" class="space-y-6 max-w-4xl mx-auto">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DEDICATED PRESERVATION PAGE VIEW -->
+  <div id="view-preservation" class="hidden min-h-screen bg-[#FAF8F5] pt-28 pb-20">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <!-- Back to Home Button -->
+      <button onclick="openPageView('home');" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-olive-600 hover:text-olive-900 mb-8 transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Quay Lại Trang Chủ
+      </button>
+
+      <!-- Preservation Header -->
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <span class="text-xs font-semibold uppercase tracking-[0.25em] text-olive-500">DỊCH VỤ ĐẶT THEO YÊU CẦU</span>
+        <h1 class="font-serif text-4xl sm:text-5xl font-normal text-[#3E452E] tracking-tight">Bảo Tồn Bó Hoa Cưới Kỷ Niệm</h1>
+        <p class="text-xs sm:text-sm text-olive-600 leading-relaxed">
+          Gửi bó hoa tươi sau lễ cưới cho Call Me Rose để chế tác thành tác phẩm đèn Resin nghệ thuật hoặc khối kỷ vật trường tồn.
+        </p>
+      </div>
+
+      <!-- Preservation Form -->
+      <form id="custom-order-form" class="bg-white p-8 sm:p-12 rounded-3xl border border-olive-100 shadow-xl text-left grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-name">Họ và tên cô dâu / chú rể</label>
+          <input type="text" id="cust-name" required placeholder="Họ và tên cô dâu / chú rể" class="w-full bg-olive-50 border border-olive-200 rounded-xl p-3 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-phone">Số Zalo liên hệ</label>
+          <input type="tel" id="cust-phone" required placeholder="0901 234 567" class="w-full bg-olive-50 border border-olive-200 rounded-xl p-3 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-date">Ngày cưới diễn ra</label>
+          <input type="date" id="cust-date" required class="w-full bg-olive-50 border border-olive-200 rounded-xl p-3 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-type">Kiểu dáng muốn đúc</label>
+          <select id="cust-type" class="w-full bg-olive-50 border border-olive-200 rounded-xl p-3 text-xs text-olive-900 focus:outline-none focus:border-olive-500">
+            <option value="Đèn Resin Floral Light Đế Gỗ">Đèn Resin Floral Light Đế Gỗ</option>
+            <option value="Khối Resin Kỷ Vật Trái Tim">Khối Resin Kỷ Vật Trái Tim</option>
+            <option value="Phụ Kiện Cài Tóc & Trang Sức">Phụ Kiện Cài Tóc &amp; Trang Sức</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label class="block text-xs font-semibold text-olive-800 mb-1" for="cust-notes">Ghi chú (Tên khắc, màu hoa cưới)</label>
+          <textarea id="cust-notes" rows="3" placeholder="Ghi chú thêm thông tin cho Call Me Rose..." class="w-full bg-olive-50 border border-olive-200 rounded-xl p-3 text-xs text-olive-900 focus:outline-none focus:border-olive-500"></textarea>
+        </div>
+        <div class="sm:col-span-2 text-center pt-3">
+          <button type="submit" class="inline-flex items-center gap-2 px-10 py-3.5 rounded-full bg-olive-900 text-white font-serif text-xs font-semibold tracking-[0.2em] uppercase hover:bg-olive-700 transition-all shadow-md">
+            Gửi Yêu Cầu Bảo Tồn
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer id="contact" class="bg-olive-900 text-olive-100 py-16 border-t border-olive-800" role="contentinfo">

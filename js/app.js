@@ -7,6 +7,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const store = window.shopStore;
   let activeCategory = 'all';
 
+  // --- SINGLE PAGE VIEW ROUTING (HOME / WORKSHOP / PRESERVATION) ---
+  window.openPageView = function(viewName) {
+    const mainContent = document.getElementById('main-content');
+    const viewWorkshop = document.getElementById('view-workshop');
+    const viewPreservation = document.getElementById('view-preservation');
+
+    if (viewWorkshop) viewWorkshop.classList.add('hidden');
+    if (viewPreservation) viewPreservation.classList.add('hidden');
+    if (mainContent) mainContent.classList.remove('hidden');
+
+    if (viewName === 'workshop') {
+      if (mainContent) mainContent.classList.add('hidden');
+      if (viewWorkshop) viewWorkshop.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (viewName === 'preservation') {
+      if (mainContent) mainContent.classList.add('hidden');
+      if (viewPreservation) viewPreservation.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const mobileDrawer = document.getElementById('mobile-menu-drawer');
+    if (mobileDrawer) mobileDrawer.classList.add('hidden');
+  };
+
   // --- INITIALIZE UI DATA ---
   function updateShopInfoUI() {
     const s = store.data.settings;
@@ -162,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- DROPDOWN CATEGORY NAVIGATION HANDLER ---
   document.querySelectorAll('[data-cat-select]').forEach(link => {
     link.addEventListener('click', () => {
+      openPageView('home');
       const targetCat = link.dataset.catSelect;
       
       const filterBtns = document.querySelectorAll('#category-filters .filter-btn');
